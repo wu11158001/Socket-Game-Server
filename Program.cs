@@ -8,7 +8,7 @@ namespace SocketGameServer
         static void Main(string[] args)
         {
             Server server = new Server(6666);
-            Console.WriteLine("服務端啟動");
+            Console.WriteLine("服務端啟動..");
             Console.Read();
         }
     }

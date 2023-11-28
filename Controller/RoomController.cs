@@ -70,10 +70,25 @@ namespace SocketGameServer.Controller
         /// <param name="client"></param>
         /// <param name="pack"></param>
         /// <returns></returns>
-        public void Chat(Server server, Client client, MainPack pack)
+        public MainPack Chat(Server server, Client client, MainPack pack)
         {
             pack.Str = client.UserName + ":" + pack.Str;
             server.Chat(client, pack);
+
+            return null;
+        }
+
+        /// <summary>
+        /// 開始遊戲
+        /// </summary>
+        /// <param name="server"></param>
+        /// <param name="client"></param>
+        /// <param name="pack"></param>
+        /// <returns></returns>
+        public MainPack StartGame(Server server, Client client, MainPack pack)
+        {
+            pack.ReturnCode = client.GetRoom.StartGame(client);
+            return pack;
         }
     }
 }

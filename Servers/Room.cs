@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SocketGameProtobuf;
 using Google.Protobuf.Collections;
+using System.Threading;
 
 namespace SocketGameServer.Servers
 {
@@ -123,6 +124,41 @@ namespace SocketGameServer.Servers
             }
 
             Broadcast(client, pack);
+        }
+
+        /// <summary>
+        /// 開始遊戲
+        /// </summary>
+        public ReturnCode StartGame(Client client)
+        {
+            if (client != clientList[0]) return ReturnCode.Fail;
+
+            Thread startTime = new Thread(CountDownTime);
+            startTime.Start();
+
+            return ReturnCode.Succeed;
+        }
+
+        /// <summary>
+        /// 到計時
+        /// </summary>
+        void CountDownTime()
+        {
+            MainPack pack = new MainPack();
+            pack.ActionCode = ActionCode.Chat;
+            pack.Str = "準備開始遊戲";
+            Broadcast(null, pack);
+            Thread.Sleep(1000);
+
+            for (int i = 5; i > 0; i--)
+            {
+                pack.Str = i.ToString();
+                Broadcast(null, pack);
+                Thread.Sleep(1000);
+            }
+
+            pack.ActionCode = ActionCode.ServerStartGame;
+            Broadcast(null, pack);
         }
     }
 }

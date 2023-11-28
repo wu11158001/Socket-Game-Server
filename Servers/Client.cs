@@ -52,6 +52,7 @@ namespace SocketGameServer.Servers
         {
             socket.BeginReceive(message.GetBuffer, message.GetStartIndex, message.GetRemSize, SocketFlags.None, ReceiveCallBack, null);
         }
+
         /// <summary>
         /// 接收消息CallBack
         /// </summary>
@@ -82,7 +83,7 @@ namespace SocketGameServer.Servers
         /// <param name="pack"></param>
         public void Send(MainPack pack)
         {
-            Console.WriteLine($"發送消息:" + pack.RequestCode.ToString());
+            //Console.WriteLine($"發送消息:" + pack.RequestCode.ToString());
             socket.Send(Message.PackData(pack));
         }
 
@@ -99,6 +100,8 @@ namespace SocketGameServer.Servers
         /// </summary>
         void Close()
         {
+            Console.WriteLine("已斷開連接");
+
             //在房間內
             if (GetRoom != null) GetRoom.Exit(server, this);
 

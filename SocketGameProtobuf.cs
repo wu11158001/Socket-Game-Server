@@ -35,21 +35,26 @@ namespace SocketGameProtobuf {
             "ZVByb3RvYnVmLlBsYXllclBhY2siLwoJTG9naW5QYWNrEhAKCHVzZXJOYW1l",
             "GAEgASgJEhAKCHBhc3N3b3JkGAIgASgJIlAKCFJvb21QYWNrEhAKCHJvb21O",
             "YW1lGAEgASgJEhAKCG1heENvdW50GAIgASgFEhEKCUN1cnJDb3VudBgDIAEo",
-            "BRINCgVTdGF0ZRgEIAEoBSIgCgpQbGF5ZXJQYWNrEhIKCnBsYXllck5hbWUY",
-            "ASABKAkqMgoLUmVxdWVzdENvZGUSDwoLUmVxdWVzdE5vbmUQABIICgRVc2Vy",
-            "EAESCAoEUm9vbRACKqgBCgpBY3Rpb25Db2RlEg4KCkFjdGlvbk5vbmUQABIJ",
-            "CgVMb2dvbhABEgkKBUxvZ2luEAISDgoKQ3JlYXRlUm9vbRADEg4KClNlYXJj",
-            "aFJvb20QBBIOCgpQbGF5ZXJMaXN0EAUSDAoISm9pblJvb20QBhIICgRFeGl0",
-            "EAcSCAoEQ2hhdBAIEg0KCVN0YXJ0R2FtZRAJEhMKD1NlcnZlclN0YXJ0R2Ft",
-            "ZRAKKkAKClJldHVybkNvZGUSDgoKUmV0dXJuTm9uZRAAEgsKB1N1Y2NlZWQQ",
-            "ARIICgRGYWlsEAISCwoHTm90Um9vbRADYgZwcm90bzM="));
+            "BRINCgVTdGF0ZRgEIAEoBSJsCgpQbGF5ZXJQYWNrEhIKCnBsYXllck5hbWUY",
+            "ASABKAkSEAoIcGxheWVySUQYAiABKAkSCgoCSFAYAyABKAUSLAoHcGFja2Fn",
+            "ZRgEIAEoCzIbLlNvY2tldEdhbWVQcm90b2J1Zi5Qb3NQYWNrIlAKB1Bvc1Bh",
+            "Y2sSDAoEcG9zWBgBIAEoAhIMCgRwb3NZGAIgASgCEhUKDUNoYXJhY3RlclJv",
+            "dFoYAyABKAISEgoKV2VhcG9uUm90WhgEIAEoAio8CgtSZXF1ZXN0Q29kZRIP",
+            "CgtSZXF1ZXN0Tm9uZRAAEggKBFVzZXIQARIICgRSb29tEAISCAoER2FtZRAD",
+            "KrsBCgpBY3Rpb25Db2RlEg4KCkFjdGlvbk5vbmUQABIJCgVMb2dvbhABEgkK",
+            "BUxvZ2luEAISDgoKQ3JlYXRlUm9vbRADEg4KClNlYXJjaFJvb20QBBIOCgpQ",
+            "bGF5ZXJMaXN0EAUSDAoISm9pblJvb20QBhIICgRFeGl0EAcSCAoEQ2hhdBAI",
+            "Eg0KCVN0YXJ0R2FtZRAJEhMKD1NlcnZlclN0YXJ0R2FtZRAKEhEKDUdhbWVT",
+            "dGF0ZVN5bmMQCypACgpSZXR1cm5Db2RlEg4KClJldHVybk5vbmUQABILCgdT",
+            "dWNjZWVkEAESCAoERmFpbBACEgsKB05vdFJvb20QA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SocketGameProtobuf.RequestCode), typeof(global::SocketGameProtobuf.ActionCode), typeof(global::SocketGameProtobuf.ReturnCode), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.MainPack), global::SocketGameProtobuf.MainPack.Parser, new[]{ "RequestCode", "ActionCode", "ReturnCode", "LoginPack", "Str", "RoomPack", "PlayerPack" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.LoginPack), global::SocketGameProtobuf.LoginPack.Parser, new[]{ "UserName", "Password" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.RoomPack), global::SocketGameProtobuf.RoomPack.Parser, new[]{ "RoomName", "MaxCount", "CurrCount", "State" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.PlayerPack), global::SocketGameProtobuf.PlayerPack.Parser, new[]{ "PlayerName" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.PlayerPack), global::SocketGameProtobuf.PlayerPack.Parser, new[]{ "PlayerName", "PlayerID", "HP", "Package" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.PosPack), global::SocketGameProtobuf.PosPack.Parser, new[]{ "PosX", "PosY", "CharacterRotZ", "WeaponRotZ" }, null, null, null, null)
           }));
     }
     #endregion
@@ -66,6 +71,10 @@ namespace SocketGameProtobuf {
     ///房間
     /// </summary>
     [pbr::OriginalName("Room")] Room = 2,
+    /// <summary>
+    ///遊戲
+    /// </summary>
+    [pbr::OriginalName("Game")] Game = 3,
   }
 
   /// <summary>
@@ -113,6 +122,10 @@ namespace SocketGameProtobuf {
     ///服務端發送的開始遊戲指令
     /// </summary>
     [pbr::OriginalName("ServerStartGame")] ServerStartGame = 10,
+    /// <summary>
+    ///遊戲狀態同步
+    /// </summary>
+    [pbr::OriginalName("GameStateSync")] GameStateSync = 11,
   }
 
   public enum ReturnCode {
@@ -816,7 +829,7 @@ namespace SocketGameProtobuf {
   }
 
   /// <summary>
-  ///房間玩家訊息
+  ///房間玩家訊息包
   /// </summary>
   public sealed partial class PlayerPack : pb::IMessage<PlayerPack> {
     private static readonly pb::MessageParser<PlayerPack> _parser = new pb::MessageParser<PlayerPack>(() => new PlayerPack());
@@ -844,6 +857,9 @@ namespace SocketGameProtobuf {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public PlayerPack(PlayerPack other) : this() {
       playerName_ = other.playerName_;
+      playerID_ = other.playerID_;
+      hP_ = other.hP_;
+      package_ = other.package_ != null ? other.package_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -866,6 +882,48 @@ namespace SocketGameProtobuf {
       }
     }
 
+    /// <summary>Field number for the "playerID" field.</summary>
+    public const int PlayerIDFieldNumber = 2;
+    private string playerID_ = "";
+    /// <summary>
+    ///玩家ID
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PlayerID {
+      get { return playerID_; }
+      set {
+        playerID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "HP" field.</summary>
+    public const int HPFieldNumber = 3;
+    private int hP_;
+    /// <summary>
+    ///血量
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int HP {
+      get { return hP_; }
+      set {
+        hP_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "package" field.</summary>
+    public const int PackageFieldNumber = 4;
+    private global::SocketGameProtobuf.PosPack package_;
+    /// <summary>
+    ///位置訊息
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::SocketGameProtobuf.PosPack Package {
+      get { return package_; }
+      set {
+        package_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PlayerPack);
@@ -880,6 +938,9 @@ namespace SocketGameProtobuf {
         return true;
       }
       if (PlayerName != other.PlayerName) return false;
+      if (PlayerID != other.PlayerID) return false;
+      if (HP != other.HP) return false;
+      if (!object.Equals(Package, other.Package)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -887,6 +948,9 @@ namespace SocketGameProtobuf {
     public override int GetHashCode() {
       int hash = 1;
       if (PlayerName.Length != 0) hash ^= PlayerName.GetHashCode();
+      if (PlayerID.Length != 0) hash ^= PlayerID.GetHashCode();
+      if (HP != 0) hash ^= HP.GetHashCode();
+      if (package_ != null) hash ^= Package.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -904,6 +968,18 @@ namespace SocketGameProtobuf {
         output.WriteRawTag(10);
         output.WriteString(PlayerName);
       }
+      if (PlayerID.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(PlayerID);
+      }
+      if (HP != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(HP);
+      }
+      if (package_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Package);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -914,6 +990,15 @@ namespace SocketGameProtobuf {
       int size = 0;
       if (PlayerName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerName);
+      }
+      if (PlayerID.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerID);
+      }
+      if (HP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HP);
+      }
+      if (package_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Package);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -929,6 +1014,18 @@ namespace SocketGameProtobuf {
       if (other.PlayerName.Length != 0) {
         PlayerName = other.PlayerName;
       }
+      if (other.PlayerID.Length != 0) {
+        PlayerID = other.PlayerID;
+      }
+      if (other.HP != 0) {
+        HP = other.HP;
+      }
+      if (other.package_ != null) {
+        if (package_ == null) {
+          Package = new global::SocketGameProtobuf.PosPack();
+        }
+        Package.MergeFrom(other.Package);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -942,6 +1039,237 @@ namespace SocketGameProtobuf {
             break;
           case 10: {
             PlayerName = input.ReadString();
+            break;
+          }
+          case 18: {
+            PlayerID = input.ReadString();
+            break;
+          }
+          case 24: {
+            HP = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            if (package_ == null) {
+              Package = new global::SocketGameProtobuf.PosPack();
+            }
+            input.ReadMessage(Package);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///遊戲內角色位置包
+  /// </summary>
+  public sealed partial class PosPack : pb::IMessage<PosPack> {
+    private static readonly pb::MessageParser<PosPack> _parser = new pb::MessageParser<PosPack>(() => new PosPack());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<PosPack> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SocketGameProtobuf.SocketGameProtobufReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PosPack() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PosPack(PosPack other) : this() {
+      posX_ = other.posX_;
+      posY_ = other.posY_;
+      characterRotZ_ = other.characterRotZ_;
+      weaponRotZ_ = other.weaponRotZ_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PosPack Clone() {
+      return new PosPack(this);
+    }
+
+    /// <summary>Field number for the "posX" field.</summary>
+    public const int PosXFieldNumber = 1;
+    private float posX_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float PosX {
+      get { return posX_; }
+      set {
+        posX_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "posY" field.</summary>
+    public const int PosYFieldNumber = 2;
+    private float posY_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float PosY {
+      get { return posY_; }
+      set {
+        posY_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "CharacterRotZ" field.</summary>
+    public const int CharacterRotZFieldNumber = 3;
+    private float characterRotZ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float CharacterRotZ {
+      get { return characterRotZ_; }
+      set {
+        characterRotZ_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "WeaponRotZ" field.</summary>
+    public const int WeaponRotZFieldNumber = 4;
+    private float weaponRotZ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float WeaponRotZ {
+      get { return weaponRotZ_; }
+      set {
+        weaponRotZ_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as PosPack);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(PosPack other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PosX, other.PosX)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PosY, other.PosY)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(CharacterRotZ, other.CharacterRotZ)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(WeaponRotZ, other.WeaponRotZ)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PosX != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PosX);
+      if (PosY != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PosY);
+      if (CharacterRotZ != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(CharacterRotZ);
+      if (WeaponRotZ != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(WeaponRotZ);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PosX != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(PosX);
+      }
+      if (PosY != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(PosY);
+      }
+      if (CharacterRotZ != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(CharacterRotZ);
+      }
+      if (WeaponRotZ != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(WeaponRotZ);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PosX != 0F) {
+        size += 1 + 4;
+      }
+      if (PosY != 0F) {
+        size += 1 + 4;
+      }
+      if (CharacterRotZ != 0F) {
+        size += 1 + 4;
+      }
+      if (WeaponRotZ != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(PosPack other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PosX != 0F) {
+        PosX = other.PosX;
+      }
+      if (other.PosY != 0F) {
+        PosY = other.PosY;
+      }
+      if (other.CharacterRotZ != 0F) {
+        CharacterRotZ = other.CharacterRotZ;
+      }
+      if (other.WeaponRotZ != 0F) {
+        WeaponRotZ = other.WeaponRotZ;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            PosX = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            PosY = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            CharacterRotZ = input.ReadFloat();
+            break;
+          }
+          case 37: {
+            WeaponRotZ = input.ReadFloat();
             break;
           }
         }

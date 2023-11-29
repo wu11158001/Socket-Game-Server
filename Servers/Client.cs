@@ -63,7 +63,12 @@ namespace SocketGameServer.Servers
                 if (socket == null || !socket.Connected) return; 
 
                 int len = socket.EndReceive(iar);
-                if (len == 0) return;
+                if (len == 0)
+                {
+                    //關閉連接
+                    Close();
+                    return;
+                }
 
                 //解析Buffer
                 message.ReadBuffer(len, HandleRequest);

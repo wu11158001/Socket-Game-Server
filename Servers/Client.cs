@@ -105,7 +105,7 @@ namespace SocketGameServer.Servers
         /// </summary>
         void Close()
         {
-            Console.WriteLine("已斷開連接");
+            Console.WriteLine(this.UserName + " => 已斷開連接");
 
             //在房間內
             if (GetRoom != null) GetRoom.Exit(server, this);

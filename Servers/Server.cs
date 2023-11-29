@@ -16,6 +16,8 @@ namespace SocketGameServer.Servers
 
         //存放所有連接的客戶端
         private List<Client> clientList = new List<Client>();
+        public List<Client> GetClientList { get { return clientList; } }
+
         private ControllerManager controllerManager;
 
         //存放所有房間

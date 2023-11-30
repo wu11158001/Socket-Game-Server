@@ -27,5 +27,18 @@ namespace SocketGameServer.Controller
             client.GetRoom.ExitGame(client);
             return null;
         }
+
+        /// <summary>
+        /// 更新角色位置
+        /// </summary>
+        /// <param name="server"></param>
+        /// <param name="client"></param>
+        /// <param name="pack"></param>
+        /// <returns></returns>
+        public MainPack UpdatePos(Server server, Client client, MainPack pack)
+        {
+            client.GetRoom.Broadcast(client, pack);
+            return null;
+        }
     }
 }

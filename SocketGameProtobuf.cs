@@ -36,25 +36,26 @@ namespace SocketGameProtobuf {
             "GAEgASgJEhAKCHBhc3N3b3JkGAIgASgJIlAKCFJvb21QYWNrEhAKCHJvb21O",
             "YW1lGAEgASgJEhAKCG1heENvdW50GAIgASgFEhEKCUN1cnJDb3VudBgDIAEo",
             "BRINCgVTdGF0ZRgEIAEoBSJaCgpQbGF5ZXJQYWNrEhIKCnBsYXllck5hbWUY",
-            "ASABKAkSCgoCSFAYAiABKAUSLAoHcGFja2FnZRgDIAEoCzIbLlNvY2tldEdh",
+            "ASABKAkSCgoCSFAYAiABKAUSLAoHcG9zUGFjaxgDIAEoCzIbLlNvY2tldEdh",
             "bWVQcm90b2J1Zi5Qb3NQYWNrIlAKB1Bvc1BhY2sSDAoEcG9zWBgBIAEoAhIM",
             "CgRwb3NZGAIgASgCEhUKDUNoYXJhY3RlclJvdFoYAyABKAISEgoKV2VhcG9u",
             "Um90WhgEIAEoAio8CgtSZXF1ZXN0Q29kZRIPCgtSZXF1ZXN0Tm9uZRAAEggK",
-            "BFVzZXIQARIICgRSb29tEAISCAoER2FtZRADKu4BCgpBY3Rpb25Db2RlEg4K",
+            "BFVzZXIQARIICgRSb29tEAISCAoER2FtZRADKvQBCgpBY3Rpb25Db2RlEg4K",
             "CkFjdGlvbk5vbmUQABIJCgVMb2dvbhABEgkKBUxvZ2luEAISCgoGTG9nb3V0",
             "EAMSDgoKQ3JlYXRlUm9vbRAEEg4KClNlYXJjaFJvb20QBRIOCgpQbGF5ZXJM",
             "aXN0EAYSDAoISm9pblJvb20QBxIICgRFeGl0EAgSCAoEQ2hhdBAJEg0KCVN0",
-            "YXJ0R2FtZRAKEhMKD1NlcnZlclN0YXJ0R2FtZRALEhEKDUdhbWVTdGF0ZVN5",
-            "bmMQDBIMCghFeGl0R2FtZRANEhcKE1VwZGF0ZUNoYXJhY3Rlckxpc3QQDipP",
-            "CgpSZXR1cm5Db2RlEg4KClJldHVybk5vbmUQABILCgdTdWNjZWVkEAESCAoE",
-            "RmFpbBACEg0KCUR1cGxpY2F0ZRADEgsKB05vdFJvb20QBGIGcHJvdG8z"));
+            "YXJ0R2FtZRAKEhMKD1NlcnZlclN0YXJ0R2FtZRALEgwKCEV4aXRHYW1lEAwS",
+            "FwoTVXBkYXRlQ2hhcmFjdGVyTGlzdBANEg0KCVVwZGF0ZVBvcxAOEggKBEZp",
+            "cmUQDypPCgpSZXR1cm5Db2RlEg4KClJldHVybk5vbmUQABILCgdTdWNjZWVk",
+            "EAESCAoERmFpbBACEg0KCUR1cGxpY2F0ZRADEgsKB05vdFJvb20QBGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SocketGameProtobuf.RequestCode), typeof(global::SocketGameProtobuf.ActionCode), typeof(global::SocketGameProtobuf.ReturnCode), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.MainPack), global::SocketGameProtobuf.MainPack.Parser, new[]{ "RequestCode", "ActionCode", "ReturnCode", "Str", "LoginPack", "RoomPack", "PlayerPack" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.LoginPack), global::SocketGameProtobuf.LoginPack.Parser, new[]{ "UserName", "Password" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.RoomPack), global::SocketGameProtobuf.RoomPack.Parser, new[]{ "RoomName", "MaxCount", "CurrCount", "State" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.PlayerPack), global::SocketGameProtobuf.PlayerPack.Parser, new[]{ "PlayerName", "HP", "Package" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.PlayerPack), global::SocketGameProtobuf.PlayerPack.Parser, new[]{ "PlayerName", "HP", "PosPack" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.PosPack), global::SocketGameProtobuf.PosPack.Parser, new[]{ "PosX", "PosY", "CharacterRotZ", "WeaponRotZ" }, null, null, null, null)
           }));
     }
@@ -128,17 +129,21 @@ namespace SocketGameProtobuf {
     /// </summary>
     [pbr::OriginalName("ServerStartGame")] ServerStartGame = 11,
     /// <summary>
-    ///遊戲狀態同步
-    /// </summary>
-    [pbr::OriginalName("GameStateSync")] GameStateSync = 12,
-    /// <summary>
     ///離開遊戲
     /// </summary>
-    [pbr::OriginalName("ExitGame")] ExitGame = 13,
+    [pbr::OriginalName("ExitGame")] ExitGame = 12,
     /// <summary>
     ///更新遊戲角色列表
     /// </summary>
-    [pbr::OriginalName("UpdateCharacterList")] UpdateCharacterList = 14,
+    [pbr::OriginalName("UpdateCharacterList")] UpdateCharacterList = 13,
+    /// <summary>
+    ///更新位置
+    /// </summary>
+    [pbr::OriginalName("UpdatePos")] UpdatePos = 14,
+    /// <summary>
+    ///射擊
+    /// </summary>
+    [pbr::OriginalName("Fire")] Fire = 15,
   }
 
   public enum ReturnCode {
@@ -875,7 +880,7 @@ namespace SocketGameProtobuf {
     public PlayerPack(PlayerPack other) : this() {
       playerName_ = other.playerName_;
       hP_ = other.hP_;
-      package_ = other.package_ != null ? other.package_.Clone() : null;
+      posPack_ = other.posPack_ != null ? other.posPack_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -912,17 +917,17 @@ namespace SocketGameProtobuf {
       }
     }
 
-    /// <summary>Field number for the "package" field.</summary>
-    public const int PackageFieldNumber = 3;
-    private global::SocketGameProtobuf.PosPack package_;
+    /// <summary>Field number for the "posPack" field.</summary>
+    public const int PosPackFieldNumber = 3;
+    private global::SocketGameProtobuf.PosPack posPack_;
     /// <summary>
     ///位置訊息
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::SocketGameProtobuf.PosPack Package {
-      get { return package_; }
+    public global::SocketGameProtobuf.PosPack PosPack {
+      get { return posPack_; }
       set {
-        package_ = value;
+        posPack_ = value;
       }
     }
 
@@ -941,7 +946,7 @@ namespace SocketGameProtobuf {
       }
       if (PlayerName != other.PlayerName) return false;
       if (HP != other.HP) return false;
-      if (!object.Equals(Package, other.Package)) return false;
+      if (!object.Equals(PosPack, other.PosPack)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -950,7 +955,7 @@ namespace SocketGameProtobuf {
       int hash = 1;
       if (PlayerName.Length != 0) hash ^= PlayerName.GetHashCode();
       if (HP != 0) hash ^= HP.GetHashCode();
-      if (package_ != null) hash ^= Package.GetHashCode();
+      if (posPack_ != null) hash ^= PosPack.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -972,9 +977,9 @@ namespace SocketGameProtobuf {
         output.WriteRawTag(16);
         output.WriteInt32(HP);
       }
-      if (package_ != null) {
+      if (posPack_ != null) {
         output.WriteRawTag(26);
-        output.WriteMessage(Package);
+        output.WriteMessage(PosPack);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -990,8 +995,8 @@ namespace SocketGameProtobuf {
       if (HP != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(HP);
       }
-      if (package_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Package);
+      if (posPack_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PosPack);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1010,11 +1015,11 @@ namespace SocketGameProtobuf {
       if (other.HP != 0) {
         HP = other.HP;
       }
-      if (other.package_ != null) {
-        if (package_ == null) {
-          Package = new global::SocketGameProtobuf.PosPack();
+      if (other.posPack_ != null) {
+        if (posPack_ == null) {
+          PosPack = new global::SocketGameProtobuf.PosPack();
         }
-        Package.MergeFrom(other.Package);
+        PosPack.MergeFrom(other.PosPack);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1036,10 +1041,10 @@ namespace SocketGameProtobuf {
             break;
           }
           case 26: {
-            if (package_ == null) {
-              Package = new global::SocketGameProtobuf.PosPack();
+            if (posPack_ == null) {
+              PosPack = new global::SocketGameProtobuf.PosPack();
             }
-            input.ReadMessage(Package);
+            input.ReadMessage(PosPack);
             break;
           }
         }

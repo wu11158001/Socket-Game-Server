@@ -40,14 +40,14 @@ namespace SocketGameProtobuf {
             "bWVQcm90b2J1Zi5Qb3NQYWNrIlAKB1Bvc1BhY2sSDAoEcG9zWBgBIAEoAhIM",
             "CgRwb3NZGAIgASgCEhUKDUNoYXJhY3RlclJvdFoYAyABKAISEgoKV2VhcG9u",
             "Um90WhgEIAEoAio8CgtSZXF1ZXN0Q29kZRIPCgtSZXF1ZXN0Tm9uZRAAEggK",
-            "BFVzZXIQARIICgRSb29tEAISCAoER2FtZRADKtUBCgpBY3Rpb25Db2RlEg4K",
+            "BFVzZXIQARIICgRSb29tEAISCAoER2FtZRADKu4BCgpBY3Rpb25Db2RlEg4K",
             "CkFjdGlvbk5vbmUQABIJCgVMb2dvbhABEgkKBUxvZ2luEAISCgoGTG9nb3V0",
             "EAMSDgoKQ3JlYXRlUm9vbRAEEg4KClNlYXJjaFJvb20QBRIOCgpQbGF5ZXJM",
             "aXN0EAYSDAoISm9pblJvb20QBxIICgRFeGl0EAgSCAoEQ2hhdBAJEg0KCVN0",
             "YXJ0R2FtZRAKEhMKD1NlcnZlclN0YXJ0R2FtZRALEhEKDUdhbWVTdGF0ZVN5",
-            "bmMQDBIMCghFeGl0R2FtZRANKk8KClJldHVybkNvZGUSDgoKUmV0dXJuTm9u",
-            "ZRAAEgsKB1N1Y2NlZWQQARIICgRGYWlsEAISDQoJRHVwbGljYXRlEAMSCwoH",
-            "Tm90Um9vbRAEYgZwcm90bzM="));
+            "bmMQDBIMCghFeGl0R2FtZRANEhcKE1VwZGF0ZUNoYXJhY3Rlckxpc3QQDipP",
+            "CgpSZXR1cm5Db2RlEg4KClJldHVybk5vbmUQABILCgdTdWNjZWVkEAESCAoE",
+            "RmFpbBACEg0KCUR1cGxpY2F0ZRADEgsKB05vdFJvb20QBGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SocketGameProtobuf.RequestCode), typeof(global::SocketGameProtobuf.ActionCode), typeof(global::SocketGameProtobuf.ReturnCode), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -135,6 +135,10 @@ namespace SocketGameProtobuf {
     ///離開遊戲
     /// </summary>
     [pbr::OriginalName("ExitGame")] ExitGame = 13,
+    /// <summary>
+    ///更新遊戲角色列表
+    /// </summary>
+    [pbr::OriginalName("UpdateCharacterList")] UpdateCharacterList = 14,
   }
 
   public enum ReturnCode {

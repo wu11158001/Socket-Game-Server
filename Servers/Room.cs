@@ -11,6 +11,8 @@ namespace SocketGameServer.Servers
 {
     class Room
     {
+        private Server server;
+
         //房間內所有客戶端
         private List<Client> clientList = new List<Client>();
 
@@ -25,8 +27,9 @@ namespace SocketGameServer.Servers
             } 
         }
 
-        public Room(Client client, RoomPack pack)
+        public Room(Server server, Client client, RoomPack pack)
         {
+            this.server = server;
             roomInfo = pack;
             clientList.Add(client);
             client.GetRoom = this;
@@ -176,14 +179,31 @@ namespace SocketGameServer.Servers
         /// </summary>
         /// <param name="client"></param>
         public void ExitGame(Client client)
-        {            
+        {
+            MainPack pack = new MainPack();
             if(client == clientList[0])
             {
                 //房主退出
+                pack.ActionCode = ActionCode.ExitGame;
+                pack.Str = "ExitGame";
+                Broadcast(client, pack);
+                server.RemoveRoom(this);
             }
             else
             {
                 //其他玩家退出
+                clientList.Remove(client);
+                pack.ActionCode = ActionCode.UpdateCharacterList;
+                foreach (var player in clientList)
+                {
+                    PlayerPack playerPack = new PlayerPack();
+                    playerPack.PlayerName = player.GetUserInfo.UserName;
+                    playerPack.HP = player.GetUserInfo.HP;
+                    pack.PlayerPack.Add(playerPack);
+                }
+
+                pack.Str = client.GetUserInfo.UserName;
+                Broadcast(client, pack);
             }
         }
     }

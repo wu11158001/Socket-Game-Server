@@ -23,6 +23,9 @@ namespace SocketGameServer.Controller
 
             RoomController roomController = new RoomController();
             controllDic.Add(roomController.GetRequestCode, roomController);
+
+            GameController gameController = new GameController();
+            controllDic.Add(gameController.GetRequestCode, gameController);
         }
 
         /// <summary>

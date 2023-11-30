@@ -82,7 +82,7 @@ namespace SocketGameServer.Servers
         {
             try
             {
-                Room room = new Room(client, pack.RoomPack[0]);
+                Room room = new Room(this, client, pack.RoomPack[0]);
                 roomList.Add(room);
 
                 foreach (PlayerPack p in room.GetPlayerInfo())

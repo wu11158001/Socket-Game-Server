@@ -24,7 +24,8 @@ namespace SocketGameServer.Controller
         /// <returns></returns>
         public MainPack ExitGame(Server server, Client client, MainPack pack)
         {
-
+            client.GetRoom.ExitGame(client);
+            return null;
         }
     }
 }

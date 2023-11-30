@@ -72,7 +72,7 @@ namespace SocketGameServer.Controller
         /// <returns></returns>
         public MainPack Chat(Server server, Client client, MainPack pack)
         {
-            pack.Str = client.UserName + ":" + pack.Str;
+            pack.Str = client.GetUserInfo.UserName + ":" + pack.Str;
             server.Chat(client, pack);
 
             return null;

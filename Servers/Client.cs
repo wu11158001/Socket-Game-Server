@@ -26,14 +26,21 @@ namespace SocketGameServer.Servers
         private MySqlConnection mySqlConnection;
         public MySqlConnection GetMySqlConnection { get { return mySqlConnection; } }
 
-        public string UserName { get; set; }
-
         public Room GetRoom { get; set; }
+
+        public class UserInfo
+        {
+            public string UserName { get; set; }
+            public int HP { get; set; }
+            public PosPack Pos { get; set; }
+        }
+        public UserInfo GetUserInfo { get; set; }
 
         public Client(Socket socket, Server server)
         {
             userData = new UserData();
             message = new Message();
+            GetUserInfo = new UserInfo();
 
             mySqlConnection = new MySqlConnection(connStr);
             mySqlConnection.Open();
@@ -105,7 +112,7 @@ namespace SocketGameServer.Servers
         /// </summary>
         void Close()
         {
-            Console.WriteLine(this.UserName + " => 已斷開連接");
+            Console.WriteLine(this.GetUserInfo.UserName + " => 已斷開連接");
 
             //在房間內
             if (GetRoom != null) GetRoom.Exit(server, this);

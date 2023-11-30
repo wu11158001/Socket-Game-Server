@@ -42,7 +42,7 @@ namespace SocketGameServer.Servers
             foreach (Client c in clientList)
             {
                 PlayerPack player = new PlayerPack();
-                player.PlayerName = c.UserName;
+                player.PlayerName = c.GetUserInfo.UserName;
                 pack.Add(player);
             }
 
@@ -140,7 +140,7 @@ namespace SocketGameServer.Servers
         }
 
         /// <summary>
-        /// 到計時
+        /// 倒計時
         /// </summary>
         void CountDownTime()
         {
@@ -150,7 +150,7 @@ namespace SocketGameServer.Servers
             Broadcast(null, pack);
             Thread.Sleep(1000);
 
-            for (int i = 5; i > 0; i--)
+            for (int i = 2; i > 0; i--)
             {
                 pack.Str = i.ToString();
                 Broadcast(null, pack);
@@ -158,7 +158,33 @@ namespace SocketGameServer.Servers
             }
 
             pack.ActionCode = ActionCode.ServerStartGame;
+
+            foreach (var c in clientList)
+            {
+                PlayerPack player = new PlayerPack();
+                c.GetUserInfo.HP = 100;
+                player.PlayerName = c.GetUserInfo.UserName;
+                player.HP = c.GetUserInfo.HP;
+                pack.PlayerPack.Add(player);
+            }
+
             Broadcast(null, pack);
+        }
+
+        /// <summary>
+        /// 退出遊戲
+        /// </summary>
+        /// <param name="client"></param>
+        public void ExitGame(Client client)
+        {            
+            if(client == clientList[0])
+            {
+                //房主退出
+            }
+            else
+            {
+                //其他玩家退出
+            }
         }
     }
 }

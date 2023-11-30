@@ -39,7 +39,7 @@ namespace SocketGameServer.Controller
         /// <returns></returns>
         public MainPack Login(Server server, Client client, MainPack pack)
         {
-            if(server.GetClientList.Any(list => list.UserName == pack.LoginPack.UserName))
+            if(server.GetClientList.Any(list => list.GetUserInfo.UserName == pack.LoginPack.UserName))
             {
                 pack.ReturnCode = ReturnCode.Duplicate;
                 Console.WriteLine(pack.LoginPack.UserName + " => 重複登入");
@@ -49,7 +49,7 @@ namespace SocketGameServer.Controller
             if (client.GetUserData.Login(pack, client.GetMySqlConnection))
             {
                 pack.ReturnCode = ReturnCode.Succeed;
-                client.UserName = pack.LoginPack.UserName;
+                client.GetUserInfo.UserName = pack.LoginPack.UserName;
 
                 Console.WriteLine(pack.LoginPack.UserName + " => 已登入");
             }
@@ -67,7 +67,7 @@ namespace SocketGameServer.Controller
         /// <returns></returns>
         public MainPack Logout(Server server, Client client, MainPack pack)
         {
-            Console.WriteLine(client.UserName + " => 用戶登出");
+            Console.WriteLine(client.GetUserInfo.UserName + " => 用戶登出");
             server.RemoveClient(client);
             return null;
         }

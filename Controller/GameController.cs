@@ -40,5 +40,18 @@ namespace SocketGameServer.Controller
             client.GetRoom.Broadcast(client, pack);
             return null;
         }
+
+        /// <summary>
+        /// 發射子彈
+        /// </summary>
+        /// <param name="server"></param>
+        /// <param name="client"></param>
+        /// <param name="pack"></param>
+        /// <returns></returns>
+        public MainPack Fire(Server server, Client client, MainPack pack)
+        {
+            client.GetRoom.Broadcast(client, pack);
+            return null;
+        }
     }
 }

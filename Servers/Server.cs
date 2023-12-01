@@ -13,6 +13,7 @@ namespace SocketGameServer.Servers
     class Server
     {
         private Socket socket;
+        private UDPServer udpServer;
 
         //存放所有連接的客戶端
         private List<Client> clientList = new List<Client>();
@@ -35,6 +36,9 @@ namespace SocketGameServer.Servers
             socket.Listen(0);
             //開始接收
             StartAccect();
+            Console.WriteLine("TCP服務已啟動");
+
+            udpServer = new UDPServer(6667, this, controllerManager);
         }
 
         /// <summary>
@@ -62,6 +66,24 @@ namespace SocketGameServer.Servers
         public void HandleRequest(MainPack pack, Client client)
         {
             controllerManager.HandleRequest(pack, client);
+        }
+
+        /// <summary>
+        /// 用戶名搜尋Clinet端
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public Client ClientFromUserName(string user)
+        {
+            foreach (Client c in clientList)
+            {
+                if (c.GetUserInfo.UserName == user)
+                {
+                    return c;
+                }
+            }
+
+            return null;
         }
 
         /// <summary>

@@ -53,7 +53,7 @@ namespace SocketGameServer.Servers
         }
 
         /// <summary>
-        /// 廣播
+        /// 廣播TCP
         /// </summary>
         /// <param name="client"></param>
         /// <param name="pack"></param>
@@ -65,6 +65,22 @@ namespace SocketGameServer.Servers
                 if (c.Equals(client)) continue;
 
                 c.Send(pack);
+            }
+        }
+
+        /// <summary>
+        /// 廣播UDP
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="pack"></param>
+        public void BroadcastUDP(Client client, MainPack pack)
+        {
+            foreach (Client c in clientList)
+            {
+                //排除的cliemt
+                if (c.Equals(client)) continue;
+
+                c.SendUDP(pack);
             }
         }
 
@@ -104,16 +120,22 @@ namespace SocketGameServer.Servers
         public void Exit(Server server ,Client client)
         {
             MainPack pack = new MainPack();
-
-            //房主離開房間
-            if (client == clientList[0])
+            if (roomInfo.State == 2)//遊戲已開始
             {
-                client.GetRoom = null;
-                pack.ActionCode = ActionCode.Exit;
-                Broadcast(client, pack);
-                server.RemoveRoom(this);
-                return;
+                ExitGame(client);            
             }
+            else
+            {
+                //房主離開房間
+                if (client == clientList[0])
+                {
+                    client.GetRoom = null;
+                    pack.ActionCode = ActionCode.Exit;
+                    Broadcast(client, pack);
+                    server.RemoveRoom(this);
+                    return;
+                }
+            }            
 
             clientList.Remove(client);
             roomInfo.State = 0;
@@ -188,11 +210,13 @@ namespace SocketGameServer.Servers
                 pack.Str = "ExitGame";
                 Broadcast(client, pack);
                 server.RemoveRoom(this);
+                client.GetRoom = null;
             }
             else
             {
                 //其他玩家退出
                 clientList.Remove(client);
+                client.GetRoom = null;
                 pack.ActionCode = ActionCode.UpdateCharacterList;
                 foreach (var player in clientList)
                 {

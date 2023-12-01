@@ -31,26 +31,24 @@ namespace SocketGameServer.Controller
         /// <summary>
         /// 更新角色位置
         /// </summary>
-        /// <param name="server"></param>
         /// <param name="client"></param>
         /// <param name="pack"></param>
         /// <returns></returns>
-        public MainPack UpdatePos(Server server, Client client, MainPack pack)
+        public MainPack UpdatePos(Client client, MainPack pack)
         {
-            client.GetRoom.Broadcast(client, pack);
+            client.GetRoom.BroadcastUDP(client, pack);
             return null;
         }
 
         /// <summary>
         /// 發射子彈
         /// </summary>
-        /// <param name="server"></param>
         /// <param name="client"></param>
         /// <param name="pack"></param>
         /// <returns></returns>
-        public MainPack Fire(Server server, Client client, MainPack pack)
+        public MainPack Fire(Client client, MainPack pack)
         {
-            client.GetRoom.Broadcast(client, pack);
+            client.GetRoom.BroadcastUDP(client, pack);
             return null;
         }
     }

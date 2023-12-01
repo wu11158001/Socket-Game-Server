@@ -25,7 +25,7 @@ namespace SocketGameProtobuf {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhTb2NrZXRHYW1lUHJvdG9idWYucHJvdG8SElNvY2tldEdhbWVQcm90b2J1",
-            "ZiL/AgoITWFpblBhY2sSNAoLcmVxdWVzdENvZGUYASABKA4yHy5Tb2NrZXRH",
+            "ZiKNAwoITWFpblBhY2sSNAoLcmVxdWVzdENvZGUYASABKA4yHy5Tb2NrZXRH",
             "YW1lUHJvdG9idWYuUmVxdWVzdENvZGUSMgoKYWN0aW9uQ29kZRgCIAEoDjIe",
             "LlNvY2tldEdhbWVQcm90b2J1Zi5BY3Rpb25Db2RlEjIKCnJldHVybkNvZGUY",
             "AyABKA4yHi5Tb2NrZXRHYW1lUHJvdG9idWYuUmV0dXJuQ29kZRILCgNzdHIY",
@@ -33,29 +33,29 @@ namespace SocketGameProtobuf {
             "LkxvZ2luUGFjaxIuCghyb29tUGFjaxgGIAMoCzIcLlNvY2tldEdhbWVQcm90",
             "b2J1Zi5Sb29tUGFjaxIyCgpwbGF5ZXJQYWNrGAcgAygLMh4uU29ja2V0R2Ft",
             "ZVByb3RvYnVmLlBsYXllclBhY2sSMgoKYnVsbGV0UGFjaxgIIAEoCzIeLlNv",
-            "Y2tldEdhbWVQcm90b2J1Zi5CdWxsZXRQYWNrIi8KCUxvZ2luUGFjaxIQCgh1",
-            "c2VyTmFtZRgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSJQCghSb29tUGFjaxIQ",
-            "Cghyb29tTmFtZRgBIAEoCRIQCghtYXhDb3VudBgCIAEoBRIRCglDdXJyQ291",
-            "bnQYAyABKAUSDQoFU3RhdGUYBCABKAUiWgoKUGxheWVyUGFjaxISCgpwbGF5",
-            "ZXJOYW1lGAEgASgJEgoKAkhQGAIgASgFEiwKB3Bvc1BhY2sYAyABKAsyGy5T",
-            "b2NrZXRHYW1lUHJvdG9idWYuUG9zUGFjayJQCgdQb3NQYWNrEgwKBHBvc1gY",
-            "ASABKAISDAoEcG9zWRgCIAEoAhIVCg1DaGFyYWN0ZXJSb3RaGAMgASgCEhIK",
-            "CldlYXBvblJvdFoYBCABKAIiXAoKQnVsbGV0UGFjaxIMCgRwb3NYGAEgASgC",
-            "EgwKBHBvc1kYAiABKAISEQoJbW91c2VQb3NYGAMgASgCEhEKCW1vdXNlUG9z",
-            "WRgEIAEoAhIMCgRSb3RaGAUgASgCKjwKC1JlcXVlc3RDb2RlEg8KC1JlcXVl",
-            "c3ROb25lEAASCAoEVXNlchABEggKBFJvb20QAhIICgRHYW1lEAMq9AEKCkFj",
-            "dGlvbkNvZGUSDgoKQWN0aW9uTm9uZRAAEgkKBUxvZ29uEAESCQoFTG9naW4Q",
-            "AhIKCgZMb2dvdXQQAxIOCgpDcmVhdGVSb29tEAQSDgoKU2VhcmNoUm9vbRAF",
-            "Eg4KClBsYXllckxpc3QQBhIMCghKb2luUm9vbRAHEggKBEV4aXQQCBIICgRD",
-            "aGF0EAkSDQoJU3RhcnRHYW1lEAoSEwoPU2VydmVyU3RhcnRHYW1lEAsSDAoI",
-            "RXhpdEdhbWUQDBIXChNVcGRhdGVDaGFyYWN0ZXJMaXN0EA0SDQoJVXBkYXRl",
-            "UG9zEA4SCAoERmlyZRAPKk8KClJldHVybkNvZGUSDgoKUmV0dXJuTm9uZRAA",
-            "EgsKB1N1Y2NlZWQQARIICgRGYWlsEAISDQoJRHVwbGljYXRlEAMSCwoHTm90",
-            "Um9vbRAEYgZwcm90bzM="));
+            "Y2tldEdhbWVQcm90b2J1Zi5CdWxsZXRQYWNrEgwKBHVzZXIYCSABKAkiLwoJ",
+            "TG9naW5QYWNrEhAKCHVzZXJOYW1lGAEgASgJEhAKCHBhc3N3b3JkGAIgASgJ",
+            "IlAKCFJvb21QYWNrEhAKCHJvb21OYW1lGAEgASgJEhAKCG1heENvdW50GAIg",
+            "ASgFEhEKCUN1cnJDb3VudBgDIAEoBRINCgVTdGF0ZRgEIAEoBSJaCgpQbGF5",
+            "ZXJQYWNrEhIKCnBsYXllck5hbWUYASABKAkSCgoCSFAYAiABKAUSLAoHcG9z",
+            "UGFjaxgDIAEoCzIbLlNvY2tldEdhbWVQcm90b2J1Zi5Qb3NQYWNrIlAKB1Bv",
+            "c1BhY2sSDAoEcG9zWBgBIAEoAhIMCgRwb3NZGAIgASgCEhUKDUNoYXJhY3Rl",
+            "clJvdFoYAyABKAISEgoKV2VhcG9uUm90WhgEIAEoAiJcCgpCdWxsZXRQYWNr",
+            "EgwKBHBvc1gYASABKAISDAoEcG9zWRgCIAEoAhIRCgltb3VzZVBvc1gYAyAB",
+            "KAISEQoJbW91c2VQb3NZGAQgASgCEgwKBFJvdFoYBSABKAIqPAoLUmVxdWVz",
+            "dENvZGUSDwoLUmVxdWVzdE5vbmUQABIICgRVc2VyEAESCAoEUm9vbRACEggK",
+            "BEdhbWUQAyr0AQoKQWN0aW9uQ29kZRIOCgpBY3Rpb25Ob25lEAASCQoFTG9n",
+            "b24QARIJCgVMb2dpbhACEgoKBkxvZ291dBADEg4KCkNyZWF0ZVJvb20QBBIO",
+            "CgpTZWFyY2hSb29tEAUSDgoKUGxheWVyTGlzdBAGEgwKCEpvaW5Sb29tEAcS",
+            "CAoERXhpdBAIEggKBENoYXQQCRINCglTdGFydEdhbWUQChITCg9TZXJ2ZXJT",
+            "dGFydEdhbWUQCxIMCghFeGl0R2FtZRAMEhcKE1VwZGF0ZUNoYXJhY3Rlckxp",
+            "c3QQDRINCglVcGRhdGVQb3MQDhIICgRGaXJlEA8qTwoKUmV0dXJuQ29kZRIO",
+            "CgpSZXR1cm5Ob25lEAASCwoHU3VjY2VlZBABEggKBEZhaWwQAhINCglEdXBs",
+            "aWNhdGUQAxILCgdOb3RSb29tEARiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SocketGameProtobuf.RequestCode), typeof(global::SocketGameProtobuf.ActionCode), typeof(global::SocketGameProtobuf.ReturnCode), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.MainPack), global::SocketGameProtobuf.MainPack.Parser, new[]{ "RequestCode", "ActionCode", "ReturnCode", "Str", "LoginPack", "RoomPack", "PlayerPack", "BulletPack" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.MainPack), global::SocketGameProtobuf.MainPack.Parser, new[]{ "RequestCode", "ActionCode", "ReturnCode", "Str", "LoginPack", "RoomPack", "PlayerPack", "BulletPack", "User" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.LoginPack), global::SocketGameProtobuf.LoginPack.Parser, new[]{ "UserName", "Password" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.RoomPack), global::SocketGameProtobuf.RoomPack.Parser, new[]{ "RoomName", "MaxCount", "CurrCount", "State" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.PlayerPack), global::SocketGameProtobuf.PlayerPack.Parser, new[]{ "PlayerName", "HP", "PosPack" }, null, null, null, null),
@@ -206,6 +206,7 @@ namespace SocketGameProtobuf {
       roomPack_ = other.roomPack_.Clone();
       playerPack_ = other.playerPack_.Clone();
       bulletPack_ = other.bulletPack_ != null ? other.bulletPack_.Clone() : null;
+      user_ = other.user_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -300,6 +301,20 @@ namespace SocketGameProtobuf {
       }
     }
 
+    /// <summary>Field number for the "user" field.</summary>
+    public const int UserFieldNumber = 9;
+    private string user_ = "";
+    /// <summary>
+    ///存放UDP發送消息的用戶名
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string User {
+      get { return user_; }
+      set {
+        user_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as MainPack);
@@ -321,6 +336,7 @@ namespace SocketGameProtobuf {
       if(!roomPack_.Equals(other.roomPack_)) return false;
       if(!playerPack_.Equals(other.playerPack_)) return false;
       if (!object.Equals(BulletPack, other.BulletPack)) return false;
+      if (User != other.User) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -335,6 +351,7 @@ namespace SocketGameProtobuf {
       hash ^= roomPack_.GetHashCode();
       hash ^= playerPack_.GetHashCode();
       if (bulletPack_ != null) hash ^= BulletPack.GetHashCode();
+      if (User.Length != 0) hash ^= User.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -374,6 +391,10 @@ namespace SocketGameProtobuf {
         output.WriteRawTag(66);
         output.WriteMessage(BulletPack);
       }
+      if (User.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(User);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -401,6 +422,9 @@ namespace SocketGameProtobuf {
       size += playerPack_.CalculateSize(_repeated_playerPack_codec);
       if (bulletPack_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(BulletPack);
+      }
+      if (User.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(User);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -438,6 +462,9 @@ namespace SocketGameProtobuf {
           BulletPack = new global::SocketGameProtobuf.BulletPack();
         }
         BulletPack.MergeFrom(other.BulletPack);
+      }
+      if (other.User.Length != 0) {
+        User = other.User;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -486,6 +513,10 @@ namespace SocketGameProtobuf {
               BulletPack = new global::SocketGameProtobuf.BulletPack();
             }
             input.ReadMessage(BulletPack);
+            break;
+          }
+          case 74: {
+            User = input.ReadString();
             break;
           }
         }

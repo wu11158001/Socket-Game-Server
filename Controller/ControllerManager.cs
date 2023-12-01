@@ -31,10 +31,8 @@ namespace SocketGameServer.Controller
         /// <summary>
         /// 處理請求
         /// </summary>
-        /// <param name="pack"></param>
-        /// <param name="client"></param>
-        /// <param name="isUPD"></param>
-        public void HandleRequest(MainPack pack, Client client, bool isUPD = false)
+        /// <param name="pack">解析後的消息</param>
+        public void HandleRequest(MainPack pack, Client client)
         {
             if(controllDic.TryGetValue(pack.RequestCode, out BaseController controller))
             {
@@ -46,22 +44,12 @@ namespace SocketGameServer.Controller
                     return;
                 }
 
-                object[] objs;
-                if (isUPD)//UDP
+                object[] objs = new object[] {server, client, pack };
+                object ret = method.Invoke(controller, objs);
+                if(ret != null)
                 {
-                    objs = new object[] { client, pack };
-                    method.Invoke(controller, objs);
+                    client.Send(ret as MainPack);
                 }
-                else//TCP
-                {
-                    objs = new object[] { server, client, pack };
-                    object ret = method.Invoke(controller, objs);
-                    if (ret != null)
-                    {
-                        client.Send(ret as MainPack);
-                        Console.WriteLine("發送數據:");
-                    }
-                }                
             }
             else
             {

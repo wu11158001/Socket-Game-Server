@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,7 +53,7 @@ namespace SocketGameServer.Tools
         }
 
         /// <summary>
-        /// 數據封裝TCP
+        /// 數據封裝
         /// </summary>
         /// <param name="pack"></param>
         /// <returns></returns>
@@ -65,16 +65,6 @@ namespace SocketGameServer.Tools
             byte[] head = BitConverter.GetBytes(data.Length);
 
             return head.Concat(data).ToArray();
-        }
-
-        /// <summary>
-        /// 數據封裝UDP
-        /// </summary>
-        /// <param name="pack"></param>
-        /// <returns></returns>
-        public static byte[] PackDataUDP(MainPack pack)
-        {
-            return pack.ToByteArray();
         }
     }
 }

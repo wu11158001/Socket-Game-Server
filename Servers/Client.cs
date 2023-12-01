@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Sockets;
-using System.Net;
-using System.Net.Sockets;
+
 using SocketGameServer.Tools;
 using SocketGameServer.DAO;
 using SocketGameProtobuf;
@@ -17,13 +16,8 @@ namespace SocketGameServer.Servers
     {
         private const string connStr = "database=sys;Data Source=localhost;user=root;password=@Wu19918001;pooling=false;charset=utf8;port=3306";
 
-        private EndPoint remoteEP;
-        public EndPoint IEP { get{ return remoteEP; }set { remoteEP = value; } }
-
-        private Socket udpClient;
         private Socket socket;
         private Server server;
-        public UDPServer udpServer;
         private Message message;
 
         private UserData userData;
@@ -96,22 +90,13 @@ namespace SocketGameServer.Servers
         }
 
         /// <summary>
-        /// 發送消息TCP
+        /// 發送消息
         /// </summary>
         /// <param name="pack"></param>
         public void Send(MainPack pack)
         {
+            //Console.WriteLine($"發送消息:" + pack.RequestCode.ToString());
             socket.Send(Message.PackData(pack));
-        }
-
-        /// <summary>
-        /// 發送消息UDP
-        /// </summary>
-        /// <param name="pack"></param>
-        public void SendUDP(MainPack pack)
-        {
-            if (IEP == null) return;
-            udpServer.SendUDP(pack, IEP);
         }
 
         /// <summary>

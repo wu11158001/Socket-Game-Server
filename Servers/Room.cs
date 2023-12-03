@@ -135,7 +135,7 @@ namespace SocketGameServer.Servers
         public ReturnCode StartGame(Client client)
         {
             if (client != clientList[0]) return ReturnCode.Fail;
-
+            
             Thread startTime = new Thread(CountDownTime);
             startTime.Start();
 
@@ -149,7 +149,7 @@ namespace SocketGameServer.Servers
         {
             MainPack pack = new MainPack();
             pack.ActionCode = ActionCode.Chat;
-            pack.Str = "準備開始遊戲";
+            pack.Str = "StartingGame";
             Broadcast(null, pack);
             Thread.Sleep(1000);
 
@@ -205,6 +205,61 @@ namespace SocketGameServer.Servers
                 pack.Str = client.GetUserInfo.UserName;
                 Broadcast(client, pack);
             }
+        }
+
+        /// <summary>
+        /// 玩家攻擊
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="pack"></param>
+        public void PlayerAttack(Client client, MainPack pack)
+        {
+            int attackPower = 10;//攻擊力
+
+            MainPack mainPack = new MainPack();
+            mainPack.ActionCode = ActionCode.PlayerAttack;
+            mainPack.Str = "PlayerAttack";
+
+            AttackPack attackPack = pack.PlayerPack[0].AttackPack;
+            List<PlayerPack> playerPacks = GetPlayerInfo().ToList();
+            foreach (var player in attackPack.AttackNames)
+            {
+                for (int i = 0; i < playerPacks.Count; i++)
+                {
+                    if (player == playerPacks[i].PlayerName && player != client.GetUserInfo.UserName)
+                    {
+                        PlayerPack playerPack = new PlayerPack();
+                        playerPack.PlayerName = playerPacks[i].PlayerName;
+                        if(playerPacks[i].HP - attackPower > 0) playerPack.HP = playerPacks[i].HP - attackPower;
+                        mainPack.PlayerPack.Add(playerPack);
+                        break;
+                    }
+                }
+            }
+
+            pack.Str = "PlayerAttack";
+            Broadcast(null, mainPack);
+
+            //UpdateCharacterList();
+        }
+
+        /// <summary>
+        /// 更新玩家訊息列表
+        /// </summary>
+        void UpdateCharacterList()
+        {
+            MainPack pack = new MainPack();
+            pack.ActionCode = ActionCode.UpdateCharacterList;
+            foreach (var player in clientList)
+            {
+                PlayerPack playerPack = new PlayerPack();
+                playerPack.PlayerName = player.GetUserInfo.UserName;
+                playerPack.HP = player.GetUserInfo.HP;
+                pack.PlayerPack.Add(playerPack);
+            }
+
+            pack.Str = "UpdateCharacterList";
+            Broadcast(null, pack);
         }
     }
 }

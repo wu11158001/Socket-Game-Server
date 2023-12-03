@@ -42,7 +42,7 @@ namespace SocketGameServer.Controller
         }
 
         /// <summary>
-        /// 發射子彈
+        /// 更新角色動畫
         /// </summary>
         /// <param name="server"></param>
         /// <param name="client"></param>
@@ -51,6 +51,19 @@ namespace SocketGameServer.Controller
         public MainPack UpdateAni(Server server, Client client, MainPack pack)
         {
             client.GetRoom.Broadcast(client, pack);
+            return null;
+        }
+
+        /// <summary>
+        /// 玩家攻擊
+        /// </summary>
+        /// <param name="server"></param>
+        /// <param name="client"></param>
+        /// <param name="pack"></param>
+        /// <returns></returns>
+        public MainPack PlayerAttack(Server server, Client client, MainPack pack)
+        {
+            client.GetRoom.PlayerAttack(client, pack);
             return null;
         }
     }

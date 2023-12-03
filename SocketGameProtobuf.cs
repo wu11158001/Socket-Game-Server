@@ -35,30 +35,34 @@ namespace SocketGameProtobuf {
             "ZVByb3RvYnVmLlBsYXllclBhY2siLwoJTG9naW5QYWNrEhAKCHVzZXJOYW1l",
             "GAEgASgJEhAKCHBhc3N3b3JkGAIgASgJIlAKCFJvb21QYWNrEhAKCHJvb21O",
             "YW1lGAEgASgJEhAKCG1heENvdW50GAIgASgFEhEKCUN1cnJDb3VudBgDIAEo",
-            "BRINCgVTdGF0ZRgEIAEoBSKMAQoKUGxheWVyUGFjaxISCgpwbGF5ZXJOYW1l",
+            "BRINCgVTdGF0ZRgEIAEoBSK8AQoKUGxheWVyUGFjaxISCgpwbGF5ZXJOYW1l",
             "GAEgASgJEgoKAkhQGAIgASgFEiwKB3Bvc1BhY2sYAyABKAsyGy5Tb2NrZXRH",
-            "YW1lUHJvdG9idWYuUG9zUGFjaxIwCglzdGF0ZVBhY2sYBCABKAsyHS5Tb2Nr",
-            "ZXRHYW1lUHJvdG9idWYuU3RhdGVQYWNrIiUKB1Bvc1BhY2sSDAoEcG9zWBgB",
-            "IAEoAhIMCgRwb3NZGAIgASgCIkcKCVN0YXRlUGFjaxIVCg1hbmltYXRpb25O",
-            "YW1lGAEgASgJEhAKCElzQWN0aXZlGAIgASgIEhEKCWRpcmVjdGlvbhgDIAEo",
-            "CCo8CgtSZXF1ZXN0Q29kZRIPCgtSZXF1ZXN0Tm9uZRAAEggKBFVzZXIQARII",
-            "CgRSb29tEAISCAoER2FtZRADKvkBCgpBY3Rpb25Db2RlEg4KCkFjdGlvbk5v",
-            "bmUQABIJCgVMb2dvbhABEgkKBUxvZ2luEAISCgoGTG9nb3V0EAMSDgoKQ3Jl",
-            "YXRlUm9vbRAEEg4KClNlYXJjaFJvb20QBRIOCgpQbGF5ZXJMaXN0EAYSDAoI",
-            "Sm9pblJvb20QBxIICgRFeGl0EAgSCAoEQ2hhdBAJEg0KCVN0YXJ0R2FtZRAK",
-            "EhMKD1NlcnZlclN0YXJ0R2FtZRALEgwKCEV4aXRHYW1lEAwSFwoTVXBkYXRl",
-            "Q2hhcmFjdGVyTGlzdBANEg0KCVVwZGF0ZVBvcxAOEg0KCVVwZGF0ZUFuaRAP",
-            "Kk8KClJldHVybkNvZGUSDgoKUmV0dXJuTm9uZRAAEgsKB1N1Y2NlZWQQARII",
-            "CgRGYWlsEAISDQoJRHVwbGljYXRlEAMSCwoHTm90Um9vbRAEYgZwcm90bzM="));
+            "YW1lUHJvdG9idWYuUG9zUGFjaxIsCgdhbmlQYWNrGAQgASgLMhsuU29ja2V0",
+            "R2FtZVByb3RvYnVmLkFuaVBhY2sSMgoKYXR0YWNrUGFjaxgFIAEoCzIeLlNv",
+            "Y2tldEdhbWVQcm90b2J1Zi5BdHRhY2tQYWNrIiUKB1Bvc1BhY2sSDAoEcG9z",
+            "WBgBIAEoAhIMCgRwb3NZGAIgASgCIkUKB0FuaVBhY2sSFQoNYW5pbWF0aW9u",
+            "TmFtZRgBIAEoCRIQCghJc0FjdGl2ZRgCIAEoCBIRCglkaXJlY3Rpb24YAyAB",
+            "KAgiIQoKQXR0YWNrUGFjaxITCgthdHRhY2tOYW1lcxgBIAMoCSo8CgtSZXF1",
+            "ZXN0Q29kZRIPCgtSZXF1ZXN0Tm9uZRAAEggKBFVzZXIQARIICgRSb29tEAIS",
+            "CAoER2FtZRADKosCCgpBY3Rpb25Db2RlEg4KCkFjdGlvbk5vbmUQABIJCgVM",
+            "b2dvbhABEgkKBUxvZ2luEAISCgoGTG9nb3V0EAMSDgoKQ3JlYXRlUm9vbRAE",
+            "Eg4KClNlYXJjaFJvb20QBRIOCgpQbGF5ZXJMaXN0EAYSDAoISm9pblJvb20Q",
+            "BxIICgRFeGl0EAgSCAoEQ2hhdBAJEg0KCVN0YXJ0R2FtZRAKEhMKD1NlcnZl",
+            "clN0YXJ0R2FtZRALEgwKCEV4aXRHYW1lEAwSFwoTVXBkYXRlQ2hhcmFjdGVy",
+            "TGlzdBANEg0KCVVwZGF0ZVBvcxAOEg0KCVVwZGF0ZUFuaRAPEhAKDFBsYXll",
+            "ckF0dGFjaxAQKk8KClJldHVybkNvZGUSDgoKUmV0dXJuTm9uZRAAEgsKB1N1",
+            "Y2NlZWQQARIICgRGYWlsEAISDQoJRHVwbGljYXRlEAMSCwoHTm90Um9vbRAE",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SocketGameProtobuf.RequestCode), typeof(global::SocketGameProtobuf.ActionCode), typeof(global::SocketGameProtobuf.ReturnCode), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.MainPack), global::SocketGameProtobuf.MainPack.Parser, new[]{ "RequestCode", "ActionCode", "ReturnCode", "Str", "LoginPack", "RoomPack", "PlayerPack" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.LoginPack), global::SocketGameProtobuf.LoginPack.Parser, new[]{ "UserName", "Password" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.RoomPack), global::SocketGameProtobuf.RoomPack.Parser, new[]{ "RoomName", "MaxCount", "CurrCount", "State" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.PlayerPack), global::SocketGameProtobuf.PlayerPack.Parser, new[]{ "PlayerName", "HP", "PosPack", "StatePack" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.PlayerPack), global::SocketGameProtobuf.PlayerPack.Parser, new[]{ "PlayerName", "HP", "PosPack", "AniPack", "AttackPack" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.PosPack), global::SocketGameProtobuf.PosPack.Parser, new[]{ "PosX", "PosY" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.StatePack), global::SocketGameProtobuf.StatePack.Parser, new[]{ "AnimationName", "IsActive", "Direction" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.AniPack), global::SocketGameProtobuf.AniPack.Parser, new[]{ "AnimationName", "IsActive", "Direction" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.AttackPack), global::SocketGameProtobuf.AttackPack.Parser, new[]{ "AttackNames" }, null, null, null, null)
           }));
     }
     #endregion
@@ -146,6 +150,10 @@ namespace SocketGameProtobuf {
     ///更新動畫
     /// </summary>
     [pbr::OriginalName("UpdateAni")] UpdateAni = 15,
+    /// <summary>
+    ///玩家攻擊
+    /// </summary>
+    [pbr::OriginalName("PlayerAttack")] PlayerAttack = 16,
   }
 
   public enum ReturnCode {
@@ -883,7 +891,8 @@ namespace SocketGameProtobuf {
       playerName_ = other.playerName_;
       hP_ = other.hP_;
       posPack_ = other.posPack_ != null ? other.posPack_.Clone() : null;
-      statePack_ = other.statePack_ != null ? other.statePack_.Clone() : null;
+      aniPack_ = other.aniPack_ != null ? other.aniPack_.Clone() : null;
+      attackPack_ = other.attackPack_ != null ? other.attackPack_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -934,17 +943,31 @@ namespace SocketGameProtobuf {
       }
     }
 
-    /// <summary>Field number for the "statePack" field.</summary>
-    public const int StatePackFieldNumber = 4;
-    private global::SocketGameProtobuf.StatePack statePack_;
+    /// <summary>Field number for the "aniPack" field.</summary>
+    public const int AniPackFieldNumber = 4;
+    private global::SocketGameProtobuf.AniPack aniPack_;
     /// <summary>
-    ///角色狀態包
+    ///角色動畫包
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::SocketGameProtobuf.StatePack StatePack {
-      get { return statePack_; }
+    public global::SocketGameProtobuf.AniPack AniPack {
+      get { return aniPack_; }
       set {
-        statePack_ = value;
+        aniPack_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attackPack" field.</summary>
+    public const int AttackPackFieldNumber = 5;
+    private global::SocketGameProtobuf.AttackPack attackPack_;
+    /// <summary>
+    ///玩家攻擊包
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::SocketGameProtobuf.AttackPack AttackPack {
+      get { return attackPack_; }
+      set {
+        attackPack_ = value;
       }
     }
 
@@ -964,7 +987,8 @@ namespace SocketGameProtobuf {
       if (PlayerName != other.PlayerName) return false;
       if (HP != other.HP) return false;
       if (!object.Equals(PosPack, other.PosPack)) return false;
-      if (!object.Equals(StatePack, other.StatePack)) return false;
+      if (!object.Equals(AniPack, other.AniPack)) return false;
+      if (!object.Equals(AttackPack, other.AttackPack)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -974,7 +998,8 @@ namespace SocketGameProtobuf {
       if (PlayerName.Length != 0) hash ^= PlayerName.GetHashCode();
       if (HP != 0) hash ^= HP.GetHashCode();
       if (posPack_ != null) hash ^= PosPack.GetHashCode();
-      if (statePack_ != null) hash ^= StatePack.GetHashCode();
+      if (aniPack_ != null) hash ^= AniPack.GetHashCode();
+      if (attackPack_ != null) hash ^= AttackPack.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1000,9 +1025,13 @@ namespace SocketGameProtobuf {
         output.WriteRawTag(26);
         output.WriteMessage(PosPack);
       }
-      if (statePack_ != null) {
+      if (aniPack_ != null) {
         output.WriteRawTag(34);
-        output.WriteMessage(StatePack);
+        output.WriteMessage(AniPack);
+      }
+      if (attackPack_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(AttackPack);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1021,8 +1050,11 @@ namespace SocketGameProtobuf {
       if (posPack_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PosPack);
       }
-      if (statePack_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(StatePack);
+      if (aniPack_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AniPack);
+      }
+      if (attackPack_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AttackPack);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1047,11 +1079,17 @@ namespace SocketGameProtobuf {
         }
         PosPack.MergeFrom(other.PosPack);
       }
-      if (other.statePack_ != null) {
-        if (statePack_ == null) {
-          StatePack = new global::SocketGameProtobuf.StatePack();
+      if (other.aniPack_ != null) {
+        if (aniPack_ == null) {
+          AniPack = new global::SocketGameProtobuf.AniPack();
         }
-        StatePack.MergeFrom(other.StatePack);
+        AniPack.MergeFrom(other.AniPack);
+      }
+      if (other.attackPack_ != null) {
+        if (attackPack_ == null) {
+          AttackPack = new global::SocketGameProtobuf.AttackPack();
+        }
+        AttackPack.MergeFrom(other.AttackPack);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1080,10 +1118,17 @@ namespace SocketGameProtobuf {
             break;
           }
           case 34: {
-            if (statePack_ == null) {
-              StatePack = new global::SocketGameProtobuf.StatePack();
+            if (aniPack_ == null) {
+              AniPack = new global::SocketGameProtobuf.AniPack();
             }
-            input.ReadMessage(StatePack);
+            input.ReadMessage(AniPack);
+            break;
+          }
+          case 42: {
+            if (attackPack_ == null) {
+              AttackPack = new global::SocketGameProtobuf.AttackPack();
+            }
+            input.ReadMessage(AttackPack);
             break;
           }
         }
@@ -1253,13 +1298,13 @@ namespace SocketGameProtobuf {
   }
 
   /// <summary>
-  ///角色狀態包
+  ///角色動畫包
   /// </summary>
-  public sealed partial class StatePack : pb::IMessage<StatePack> {
-    private static readonly pb::MessageParser<StatePack> _parser = new pb::MessageParser<StatePack>(() => new StatePack());
+  public sealed partial class AniPack : pb::IMessage<AniPack> {
+    private static readonly pb::MessageParser<AniPack> _parser = new pb::MessageParser<AniPack>(() => new AniPack());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<StatePack> Parser { get { return _parser; } }
+    public static pb::MessageParser<AniPack> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1272,14 +1317,14 @@ namespace SocketGameProtobuf {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StatePack() {
+    public AniPack() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StatePack(StatePack other) : this() {
+    public AniPack(AniPack other) : this() {
       animationName_ = other.animationName_;
       isActive_ = other.isActive_;
       direction_ = other.direction_;
@@ -1287,8 +1332,8 @@ namespace SocketGameProtobuf {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StatePack Clone() {
-      return new StatePack(this);
+    public AniPack Clone() {
+      return new AniPack(this);
     }
 
     /// <summary>Field number for the "animationName" field.</summary>
@@ -1323,7 +1368,7 @@ namespace SocketGameProtobuf {
     public const int DirectionFieldNumber = 3;
     private bool direction_;
     /// <summary>
-    ///面相方向(true=左)
+    ///面相方向(true=右)
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Direction {
@@ -1335,11 +1380,11 @@ namespace SocketGameProtobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as StatePack);
+      return Equals(other as AniPack);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(StatePack other) {
+    public bool Equals(AniPack other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1407,7 +1452,7 @@ namespace SocketGameProtobuf {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(StatePack other) {
+    public void MergeFrom(AniPack other) {
       if (other == null) {
         return;
       }
@@ -1441,6 +1486,133 @@ namespace SocketGameProtobuf {
           }
           case 24: {
             Direction = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///玩家攻擊包
+  /// </summary>
+  public sealed partial class AttackPack : pb::IMessage<AttackPack> {
+    private static readonly pb::MessageParser<AttackPack> _parser = new pb::MessageParser<AttackPack>(() => new AttackPack());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<AttackPack> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SocketGameProtobuf.SocketGameProtobufReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AttackPack() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AttackPack(AttackPack other) : this() {
+      attackNames_ = other.attackNames_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AttackPack Clone() {
+      return new AttackPack(this);
+    }
+
+    /// <summary>Field number for the "attackNames" field.</summary>
+    public const int AttackNamesFieldNumber = 1;
+    private static readonly pb::FieldCodec<string> _repeated_attackNames_codec
+        = pb::FieldCodec.ForString(10);
+    private readonly pbc::RepeatedField<string> attackNames_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    ///受擊玩家列表
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> AttackNames {
+      get { return attackNames_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as AttackPack);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(AttackPack other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!attackNames_.Equals(other.attackNames_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= attackNames_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      attackNames_.WriteTo(output, _repeated_attackNames_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += attackNames_.CalculateSize(_repeated_attackNames_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(AttackPack other) {
+      if (other == null) {
+        return;
+      }
+      attackNames_.Add(other.attackNames_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            attackNames_.AddEntriesFrom(input, _repeated_attackNames_codec);
             break;
           }
         }

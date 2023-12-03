@@ -95,7 +95,11 @@ namespace SocketGameServer.Servers
         /// <param name="pack"></param>
         public void Send(MainPack pack)
         {
-            //Console.WriteLine($"發送消息:" + pack.ToString());
+            /*if(pack.ActionCode != ActionCode.UpdatePos)
+            {
+                Console.WriteLine($"發送消息:" + pack.ActionCode.ToString());
+            }*/
+
             socket.Send(Message.PackData(pack));
         }
 

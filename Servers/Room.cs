@@ -15,6 +15,8 @@ namespace SocketGameServer.Servers
 
         //房間內所有客戶端
         private List<Client> clientList = new List<Client>();
+        //紀錄已發送遊戲結果的玩家
+        private List<Client> getResultClientList = new List<Client>();
 
         //房間訊息
         private RoomPack roomInfo;
@@ -46,10 +48,28 @@ namespace SocketGameServer.Servers
             {
                 PlayerPack player = new PlayerPack();
                 player.PlayerName = c.GetUserInfo.UserName;
+                player.HP = c.GetUserInfo.HP;
                 pack.Add(player);
             }
 
             return pack;
+        }
+
+        /// <summary>
+        /// 設定房間玩家訊息
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="hp"></param>
+        void SetPlayerInfo(string userName, int hp)
+        {
+            for (int i = 0; i < clientList.Count; i++)
+            {
+                if(clientList[i].GetUserInfo.UserName == userName)
+                {
+                    clientList[i].GetUserInfo.HP = hp;
+                    break;
+                }
+            }
         }
 
         /// <summary>
@@ -230,7 +250,14 @@ namespace SocketGameServer.Servers
                     {
                         PlayerPack playerPack = new PlayerPack();
                         playerPack.PlayerName = playerPacks[i].PlayerName;
-                        if(playerPacks[i].HP - attackPower > 0) playerPack.HP = playerPacks[i].HP - attackPower;
+
+                        if (playerPacks[i].HP - attackPower >= 0)
+                        {
+                            int hp = playerPacks[i].HP - attackPower;
+                            SetPlayerInfo(player, hp);
+                            playerPack.HP = hp;
+                        }
+
                         mainPack.PlayerPack.Add(playerPack);
                         break;
                     }
@@ -240,7 +267,7 @@ namespace SocketGameServer.Servers
             pack.Str = "PlayerAttack";
             Broadcast(null, mainPack);
 
-            //UpdateCharacterList();
+            UpdateCharacterList();
         }
 
         /// <summary>
@@ -248,6 +275,8 @@ namespace SocketGameServer.Servers
         /// </summary>
         void UpdateCharacterList()
         {
+            List<Client> dieClientList = new List<Client>();
+
             MainPack pack = new MainPack();
             pack.ActionCode = ActionCode.UpdateCharacterList;
             foreach (var player in clientList)
@@ -256,10 +285,51 @@ namespace SocketGameServer.Servers
                 playerPack.PlayerName = player.GetUserInfo.UserName;
                 playerPack.HP = player.GetUserInfo.HP;
                 pack.PlayerPack.Add(playerPack);
+
+                //紀錄死亡玩家
+                if (player.GetUserInfo.HP <= 0) dieClientList.Add(player);
             }
 
             pack.Str = "UpdateCharacterList";
             Broadcast(null, pack);
+
+            JudgeGameResult(dieClientList);
+        }
+
+        /// <summary>
+        /// 判斷遊戲結果
+        /// </summary>
+        /// <param name="dieClientList"></param>
+        void JudgeGameResult(List<Client> dieClientList)
+        {
+            if (dieClientList.Count > 0)
+            {
+                MainPack pack = new MainPack();
+                pack.ActionCode = ActionCode.GameResult;
+                pack.Str = "GameResult";
+
+                foreach (var player in dieClientList)
+                {
+                    if (!getResultClientList.Contains(player))
+                    {
+                        PlayerPack playerPack = new PlayerPack();
+                        playerPack.PlayerName = player.GetUserInfo.UserName;
+                        pack.PlayerPack.Add(playerPack);
+                        pack.ReturnCode = ReturnCode.Fail;
+                        
+                        getResultClientList.Add(player);
+                        player.Send(pack);
+                    }
+                }
+
+                if(clientList.Count - getResultClientList.Count == 1)
+                {
+                    Client player = clientList.Where(x => x.GetUserInfo.HP > 0)
+                                              .FirstOrDefault();
+                    pack.ReturnCode = ReturnCode.Succeed;
+                    player.Send(pack);
+                }
+            }
         }
     }
 }

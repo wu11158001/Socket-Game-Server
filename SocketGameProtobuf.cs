@@ -44,15 +44,15 @@ namespace SocketGameProtobuf {
             "TmFtZRgBIAEoCRIQCghJc0FjdGl2ZRgCIAEoCBIRCglkaXJlY3Rpb24YAyAB",
             "KAgiIQoKQXR0YWNrUGFjaxITCgthdHRhY2tOYW1lcxgBIAMoCSo8CgtSZXF1",
             "ZXN0Q29kZRIPCgtSZXF1ZXN0Tm9uZRAAEggKBFVzZXIQARIICgRSb29tEAIS",
-            "CAoER2FtZRADKosCCgpBY3Rpb25Db2RlEg4KCkFjdGlvbk5vbmUQABIJCgVM",
+            "CAoER2FtZRADKpsCCgpBY3Rpb25Db2RlEg4KCkFjdGlvbk5vbmUQABIJCgVM",
             "b2dvbhABEgkKBUxvZ2luEAISCgoGTG9nb3V0EAMSDgoKQ3JlYXRlUm9vbRAE",
             "Eg4KClNlYXJjaFJvb20QBRIOCgpQbGF5ZXJMaXN0EAYSDAoISm9pblJvb20Q",
             "BxIICgRFeGl0EAgSCAoEQ2hhdBAJEg0KCVN0YXJ0R2FtZRAKEhMKD1NlcnZl",
             "clN0YXJ0R2FtZRALEgwKCEV4aXRHYW1lEAwSFwoTVXBkYXRlQ2hhcmFjdGVy",
             "TGlzdBANEg0KCVVwZGF0ZVBvcxAOEg0KCVVwZGF0ZUFuaRAPEhAKDFBsYXll",
-            "ckF0dGFjaxAQKk8KClJldHVybkNvZGUSDgoKUmV0dXJuTm9uZRAAEgsKB1N1",
-            "Y2NlZWQQARIICgRGYWlsEAISDQoJRHVwbGljYXRlEAMSCwoHTm90Um9vbRAE",
-            "YgZwcm90bzM="));
+            "ckF0dGFjaxAQEg4KCkdhbWVSZXN1bHQQESpPCgpSZXR1cm5Db2RlEg4KClJl",
+            "dHVybk5vbmUQABILCgdTdWNjZWVkEAESCAoERmFpbBACEg0KCUR1cGxpY2F0",
+            "ZRADEgsKB05vdFJvb20QBGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SocketGameProtobuf.RequestCode), typeof(global::SocketGameProtobuf.ActionCode), typeof(global::SocketGameProtobuf.ReturnCode), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -154,6 +154,10 @@ namespace SocketGameProtobuf {
     ///玩家攻擊
     /// </summary>
     [pbr::OriginalName("PlayerAttack")] PlayerAttack = 16,
+    /// <summary>
+    ///遊戲結果
+    /// </summary>
+    [pbr::OriginalName("GameResult")] GameResult = 17,
   }
 
   public enum ReturnCode {

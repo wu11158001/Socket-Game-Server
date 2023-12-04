@@ -180,6 +180,7 @@ namespace SocketGameServer.Servers
                 Thread.Sleep(1000);
             }
 
+            getResultClientList.Clear();
             pack.ActionCode = ActionCode.ServerStartGame;
 
             foreach (var c in clientList)
@@ -322,10 +323,18 @@ namespace SocketGameServer.Servers
                     }
                 }
 
-                if(clientList.Count - getResultClientList.Count == 1)
+                int surviveCount = clientList.Where(x => x.GetUserInfo.HP > 0).Count();
+                if (surviveCount == 1)
                 {
+                    pack = new MainPack();
+                    pack.ActionCode = ActionCode.GameResult;
+                    pack.Str = "GameResult";
                     Client player = clientList.Where(x => x.GetUserInfo.HP > 0)
                                               .FirstOrDefault();
+
+                    PlayerPack playerPack = new PlayerPack();
+                    playerPack.PlayerName = player.GetUserInfo.UserName;
+                    pack.PlayerPack.Add(playerPack);
                     pack.ReturnCode = ReturnCode.Succeed;
                     player.Send(pack);
                 }

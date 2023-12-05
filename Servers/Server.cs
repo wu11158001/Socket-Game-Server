@@ -22,6 +22,7 @@ namespace SocketGameServer.Servers
 
         //存放所有房間
         private List<Room> roomList = new List<Room>();
+        public int GetRoomCount { get { return roomList.Count; } }
 
         public Server(int port)
         {

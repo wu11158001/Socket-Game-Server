@@ -167,7 +167,7 @@ namespace SocketGameServer.Servers
         {
             MainPack pack = new MainPack();
             pack.ActionCode = ActionCode.Chat;
-            pack.Str = "StartingGame";
+            pack.Str = "遊戲準備開始...";
             Broadcast(null, pack);
             Thread.Sleep(1000);
 

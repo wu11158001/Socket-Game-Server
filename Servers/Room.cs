@@ -48,6 +48,7 @@ namespace SocketGameServer.Servers
             {
                 PlayerPack player = new PlayerPack();
                 player.PlayerName = c.GetUserInfo.UserName;
+                player.TotalKill = c.GetUserInfo.TotalKill;
                 player.HP = c.GetUserInfo.HP;
                 pack.Add(player);
             }
@@ -97,7 +98,7 @@ namespace SocketGameServer.Servers
             clientList.Add(client);
 
             //房間滿人
-            if(roomInfo.MaxCount >= clientList.Count)
+            if(clientList.Count >= roomInfo.MaxCount)
             {
                 roomInfo.State = 1;
             }
@@ -187,6 +188,7 @@ namespace SocketGameServer.Servers
                 c.GetUserInfo.HP = 100;
                 player.PlayerName = c.GetUserInfo.UserName;
                 player.HP = c.GetUserInfo.HP;
+                player.TotalKill = c.GetUserInfo.TotalKill;
                 pack.PlayerPack.Add(player);
             }
 
@@ -262,13 +264,14 @@ namespace SocketGameServer.Servers
             pack.Str = "PlayerAttack";
             Broadcast(null, mainPack);
 
-            UpdateCharacterList();
+            UpdateCharacterList(client);
         }
 
         /// <summary>
         /// 更新玩家訊息列表
         /// </summary>
-        void UpdateCharacterList()
+        /// <param name="attacker">攻擊者</param>
+        void UpdateCharacterList(Client client)
         {
             List<Client> dieClientList = new List<Client>();
 
@@ -279,6 +282,7 @@ namespace SocketGameServer.Servers
                 PlayerPack playerPack = new PlayerPack();
                 playerPack.PlayerName = player.GetUserInfo.UserName;
                 playerPack.HP = player.GetUserInfo.HP;
+                playerPack.TotalKill = player.GetUserInfo.TotalKill;
                 pack.PlayerPack.Add(playerPack);
 
                 //紀錄死亡玩家
@@ -288,35 +292,83 @@ namespace SocketGameServer.Servers
             pack.Str = "UpdateCharacterList";
             Broadcast(null, pack);
 
-            JudgeGameResult(dieClientList);
+            JudgeGameResult(dieClientList, client);
         }
 
         /// <summary>
         /// 判斷遊戲結果
         /// </summary>
         /// <param name="dieClientList"></param>
-        void JudgeGameResult(List<Client> dieClientList)
+        /// <param name="attacker">攻擊者</param>
+        void JudgeGameResult(List<Client> dieClientList, Client client)
         {
             if (dieClientList.Count > 0)
             {
+                List<string> deadList = new List<string>();
+
                 MainPack pack = new MainPack();
                 pack.ActionCode = ActionCode.GameResult;
                 pack.Str = "GameResult";
 
+                PlayerPack playerPack = new PlayerPack();
+
+                //死亡玩家結果
                 foreach (var player in dieClientList)
                 {
                     if (!getResultClientList.Contains(player))
                     {
-                        PlayerPack playerPack = new PlayerPack();
+                        //死亡玩家接收
+                        playerPack = new PlayerPack();
                         playerPack.PlayerName = player.GetUserInfo.UserName;
                         pack.PlayerPack.Add(playerPack);
                         pack.ReturnCode = ReturnCode.Fail;
                         
                         getResultClientList.Add(player);
                         player.Send(pack);
+
+                        deadList.Add(player.GetUserInfo.UserName);
+
+                        //sql擊殺數
+                        pack = new MainPack();
+                        LoginPack loginPack = new LoginPack();
+                        loginPack.UserName = client.GetUserInfo.UserName;
+                        pack.LoginPack = loginPack;
+                        int kills = client.GetUserData.SearchKillCount(pack, client.GetMySqlConnection);
+                        //sql更新擊殺數
+                        pack = new MainPack();
+                        playerPack = new PlayerPack();
+                        playerPack.PlayerName = client.GetUserInfo.UserName;
+                        playerPack.TotalKill = kills;
+                        pack.PlayerPack.Add(playerPack);
+                        if (client.GetUserData.UpdateKillCount(pack, client.GetMySqlConnection))
+                        {
+                            pack.ReturnCode = ReturnCode.Succeed;
+                            client.GetUserInfo.TotalKill = kills + 1;
+                            Console.WriteLine("更新擊殺數成功！");
+                        }
+                        else
+                        {
+                            pack.ReturnCode = ReturnCode.Fail;
+                            Console.WriteLine("未找到匹配的用户名，更新失败。");
+                        }
                     }
                 }
 
+                //廣播擊殺訊息
+                pack = new MainPack();
+                pack.ActionCode = ActionCode.KillInfo;
+                pack.Str = "UpdateKillCount";
+
+                KillInfoPack killInfoPack = new KillInfoPack();
+                killInfoPack.Attacker = client.GetUserInfo.UserName;
+                killInfoPack.DeadList.Add(deadList);
+
+                playerPack = new PlayerPack();
+                playerPack.KillInfoPack = killInfoPack;
+                pack.PlayerPack.Add(playerPack);
+                Broadcast(null, pack);
+
+                //獲勝玩家結果
                 int surviveCount = clientList.Where(x => x.GetUserInfo.HP > 0).Count();
                 if (surviveCount == 1)
                 {
@@ -326,7 +378,7 @@ namespace SocketGameServer.Servers
                     Client player = clientList.Where(x => x.GetUserInfo.HP > 0)
                                               .FirstOrDefault();
 
-                    PlayerPack playerPack = new PlayerPack();
+                    playerPack = new PlayerPack();
                     playerPack.PlayerName = player.GetUserInfo.UserName;
                     pack.PlayerPack.Add(playerPack);
                     pack.ReturnCode = ReturnCode.Succeed;

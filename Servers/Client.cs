@@ -32,6 +32,7 @@ namespace SocketGameServer.Servers
         {
             public string UserName { get; set; }
             public int HP { get; set; }
+            public int TotalKill { get; set; }
             public PosPack Pos { get; set; }
         }
         public UserInfo GetUserInfo { get; set; }
@@ -95,10 +96,10 @@ namespace SocketGameServer.Servers
         /// <param name="pack"></param>
         public void Send(MainPack pack)
         {
-            /*if(pack.ActionCode != ActionCode.UpdatePos)
+            if(pack.ActionCode != ActionCode.UpdatePos)
             {
                 Console.WriteLine($"發送消息:" + pack.ActionCode.ToString());
-            }*/
+            }
 
             socket.Send(Message.PackData(pack));
         }

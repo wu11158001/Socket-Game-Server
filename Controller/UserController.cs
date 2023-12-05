@@ -50,6 +50,7 @@ namespace SocketGameServer.Controller
             {
                 pack.ReturnCode = ReturnCode.Succeed;
                 client.GetUserInfo.UserName = pack.LoginPack.UserName;
+                client.GetUserInfo.TotalKill = client.GetUserData.SearchKillCount(pack, client.GetMySqlConnection);
 
                 Console.WriteLine(pack.LoginPack.UserName + " => 已登入");
             }

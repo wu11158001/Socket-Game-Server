@@ -125,12 +125,10 @@ namespace SocketGameServer.Servers
         {
             MainPack pack = new MainPack();
 
-            //房主離開房間
-            if (client == clientList[0])
+            //房間只剩1人關閉房間
+            if (clientList.Count == 1)
             {
                 client.GetRoom = null;
-                pack.ActionCode = ActionCode.Exit;
-                Broadcast(client, pack);
                 server.RemoveRoom(this);
                 return;
             }
@@ -202,12 +200,8 @@ namespace SocketGameServer.Servers
         public void ExitGame(Client client)
         {
             MainPack pack = new MainPack();
-            if(client == clientList[0])
+            if(clientList.Count == 1)
             {
-                //房主退出
-                pack.ActionCode = ActionCode.ExitGame;
-                pack.Str = "ExitGame";
-                Broadcast(client, pack);
                 server.RemoveRoom(this);
             }
             else

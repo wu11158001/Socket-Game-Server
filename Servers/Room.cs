@@ -136,7 +136,7 @@ namespace SocketGameServer.Servers
             }
 
             clientList.Remove(client);
-            roomInfo.State = 0;
+            if(roomInfo.State != 2) roomInfo.State = 0;
             client.GetRoom = null;                        
             pack.ActionCode = ActionCode.UpdateRoomUserInfo;
 
@@ -177,7 +177,8 @@ namespace SocketGameServer.Servers
         public ReturnCode StartGame(Client client)
         {
             if (client != clientList[0]) return ReturnCode.Fail;
-            
+
+            roomInfo.State = 2;
             Thread startTime = new Thread(CountDownTime);
             startTime.Start();
 

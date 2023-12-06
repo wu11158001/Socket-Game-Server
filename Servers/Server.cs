@@ -86,7 +86,7 @@ namespace SocketGameServer.Servers
                 Room room = new Room(this, client, pack.RoomPack[0]);
                 roomList.Add(room);
 
-                foreach (PlayerPack p in room.GetPlayerInfo())
+                foreach (PlayerPack p in room.GetRoomPlayerInfo())
                 {
                     pack.PlayerPack.Add(p);
                 }
@@ -149,7 +149,7 @@ namespace SocketGameServer.Servers
                         //可以加入房間
                         r.Join(client);
                         pack.RoomPack.Add(r.GetRoomInfo);
-                        foreach(PlayerPack p in r.GetPlayerInfo())
+                        foreach(PlayerPack p in r.GetRoomPlayerInfo())
                         {
                             pack.PlayerPack.Add(p);
                         }

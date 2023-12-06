@@ -35,34 +35,35 @@ namespace SocketGameProtobuf {
             "ZVByb3RvYnVmLlBsYXllclBhY2siLwoJTG9naW5QYWNrEhAKCHVzZXJOYW1l",
             "GAEgASgJEhAKCHBhc3N3b3JkGAIgASgJIlAKCFJvb21QYWNrEhAKCHJvb21O",
             "YW1lGAEgASgJEhAKCG1heENvdW50GAIgASgFEhEKCUN1cnJDb3VudBgDIAEo",
-            "BRINCgVTdGF0ZRgEIAEoBSKHAgoKUGxheWVyUGFjaxISCgpwbGF5ZXJOYW1l",
-            "GAEgASgJEgoKAkhQGAIgASgFEhEKCXRvdGFsS2lsbBgDIAEoBRIsCgdwb3NQ",
-            "YWNrGAQgASgLMhsuU29ja2V0R2FtZVByb3RvYnVmLlBvc1BhY2sSLAoHYW5p",
-            "UGFjaxgFIAEoCzIbLlNvY2tldEdhbWVQcm90b2J1Zi5BbmlQYWNrEjIKCmF0",
-            "dGFja1BhY2sYBiABKAsyHi5Tb2NrZXRHYW1lUHJvdG9idWYuQXR0YWNrUGFj",
-            "axI2CgxraWxsSW5mb1BhY2sYByABKAsyIC5Tb2NrZXRHYW1lUHJvdG9idWYu",
-            "S2lsbEluZm9QYWNrIiUKB1Bvc1BhY2sSDAoEcG9zWBgBIAEoAhIMCgRwb3NZ",
-            "GAIgASgCIkUKB0FuaVBhY2sSFQoNYW5pbWF0aW9uTmFtZRgBIAEoCRIQCghJ",
-            "c0FjdGl2ZRgCIAEoCBIRCglkaXJlY3Rpb24YAyABKAgiIQoKQXR0YWNrUGFj",
-            "axITCgthdHRhY2tOYW1lcxgBIAMoCSIyCgxLaWxsSW5mb1BhY2sSEAoIYXR0",
-            "YWNrZXIYASABKAkSEAoIZGVhZExpc3QYAiADKAkqPAoLUmVxdWVzdENvZGUS",
-            "DwoLUmVxdWVzdE5vbmUQABIICgRVc2VyEAESCAoEUm9vbRACEggKBEdhbWUQ",
-            "AyqpAgoKQWN0aW9uQ29kZRIOCgpBY3Rpb25Ob25lEAASCQoFTG9nb24QARIJ",
-            "CgVMb2dpbhACEgoKBkxvZ291dBADEg4KCkNyZWF0ZVJvb20QBBIOCgpTZWFy",
-            "Y2hSb29tEAUSDgoKUGxheWVyTGlzdBAGEgwKCEpvaW5Sb29tEAcSCAoERXhp",
-            "dBAIEggKBENoYXQQCRINCglTdGFydEdhbWUQChITCg9TZXJ2ZXJTdGFydEdh",
-            "bWUQCxIMCghFeGl0R2FtZRAMEhcKE1VwZGF0ZUNoYXJhY3Rlckxpc3QQDRIN",
-            "CglVcGRhdGVQb3MQDhINCglVcGRhdGVBbmkQDxIQCgxQbGF5ZXJBdHRhY2sQ",
-            "EBIOCgpHYW1lUmVzdWx0EBESDAoIS2lsbEluZm8QEipPCgpSZXR1cm5Db2Rl",
-            "Eg4KClJldHVybk5vbmUQABILCgdTdWNjZWVkEAESCAoERmFpbBACEg0KCUR1",
-            "cGxpY2F0ZRADEgsKB05vdFJvb20QBGIGcHJvdG8z"));
+            "BRINCgVTdGF0ZRgEIAEoBSKvAgoKUGxheWVyUGFjaxISCgpwbGF5ZXJOYW1l",
+            "GAEgASgJEg0KBU1heEhwGAIgASgFEgoKAkhQGAMgASgFEhEKCXRvdGFsS2ls",
+            "bBgEIAEoBRIXCg9zZWxlY3RDaGFyYWN0ZXIYBSABKAUSLAoHcG9zUGFjaxgG",
+            "IAEoCzIbLlNvY2tldEdhbWVQcm90b2J1Zi5Qb3NQYWNrEiwKB2FuaVBhY2sY",
+            "ByABKAsyGy5Tb2NrZXRHYW1lUHJvdG9idWYuQW5pUGFjaxIyCgphdHRhY2tQ",
+            "YWNrGAggASgLMh4uU29ja2V0R2FtZVByb3RvYnVmLkF0dGFja1BhY2sSNgoM",
+            "a2lsbEluZm9QYWNrGAkgASgLMiAuU29ja2V0R2FtZVByb3RvYnVmLktpbGxJ",
+            "bmZvUGFjayIlCgdQb3NQYWNrEgwKBHBvc1gYASABKAISDAoEcG9zWRgCIAEo",
+            "AiJFCgdBbmlQYWNrEhUKDWFuaW1hdGlvbk5hbWUYASABKAkSEAoISXNBY3Rp",
+            "dmUYAiABKAgSEQoJZGlyZWN0aW9uGAMgASgIIiEKCkF0dGFja1BhY2sSEwoL",
+            "YXR0YWNrTmFtZXMYASADKAkiMgoMS2lsbEluZm9QYWNrEhAKCGF0dGFja2Vy",
+            "GAEgASgJEhAKCGRlYWRMaXN0GAIgAygJKjwKC1JlcXVlc3RDb2RlEg8KC1Jl",
+            "cXVlc3ROb25lEAASCAoEVXNlchABEggKBFJvb20QAhIICgRHYW1lEAMqsQIK",
+            "CkFjdGlvbkNvZGUSDgoKQWN0aW9uTm9uZRAAEgkKBUxvZ29uEAESCQoFTG9n",
+            "aW4QAhIKCgZMb2dvdXQQAxIOCgpDcmVhdGVSb29tEAQSDgoKU2VhcmNoUm9v",
+            "bRAFEhYKElVwZGF0ZVJvb21Vc2VySW5mbxAGEgwKCEpvaW5Sb29tEAcSCAoE",
+            "RXhpdBAIEggKBENoYXQQCRINCglTdGFydEdhbWUQChITCg9TZXJ2ZXJTdGFy",
+            "dEdhbWUQCxIMCghFeGl0R2FtZRAMEhcKE1VwZGF0ZUNoYXJhY3Rlckxpc3QQ",
+            "DRINCglVcGRhdGVQb3MQDhINCglVcGRhdGVBbmkQDxIQCgxQbGF5ZXJBdHRh",
+            "Y2sQEBIOCgpHYW1lUmVzdWx0EBESDAoIS2lsbEluZm8QEipPCgpSZXR1cm5D",
+            "b2RlEg4KClJldHVybk5vbmUQABILCgdTdWNjZWVkEAESCAoERmFpbBACEg0K",
+            "CUR1cGxpY2F0ZRADEgsKB05vdFJvb20QBGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SocketGameProtobuf.RequestCode), typeof(global::SocketGameProtobuf.ActionCode), typeof(global::SocketGameProtobuf.ReturnCode), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.MainPack), global::SocketGameProtobuf.MainPack.Parser, new[]{ "RequestCode", "ActionCode", "ReturnCode", "Str", "LoginPack", "RoomPack", "PlayerPack" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.LoginPack), global::SocketGameProtobuf.LoginPack.Parser, new[]{ "UserName", "Password" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.RoomPack), global::SocketGameProtobuf.RoomPack.Parser, new[]{ "RoomName", "MaxCount", "CurrCount", "State" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.PlayerPack), global::SocketGameProtobuf.PlayerPack.Parser, new[]{ "PlayerName", "HP", "TotalKill", "PosPack", "AniPack", "AttackPack", "KillInfoPack" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.PlayerPack), global::SocketGameProtobuf.PlayerPack.Parser, new[]{ "PlayerName", "MaxHp", "HP", "TotalKill", "SelectCharacter", "PosPack", "AniPack", "AttackPack", "KillInfoPack" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.PosPack), global::SocketGameProtobuf.PosPack.Parser, new[]{ "PosX", "PosY" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.AniPack), global::SocketGameProtobuf.AniPack.Parser, new[]{ "AnimationName", "IsActive", "Direction" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SocketGameProtobuf.AttackPack), global::SocketGameProtobuf.AttackPack.Parser, new[]{ "AttackNames" }, null, null, null, null),
@@ -115,9 +116,9 @@ namespace SocketGameProtobuf {
     /// </summary>
     [pbr::OriginalName("SearchRoom")] SearchRoom = 5,
     /// <summary>
-    ///房間玩家列表
+    ///更新房間玩家列表
     /// </summary>
-    [pbr::OriginalName("PlayerList")] PlayerList = 6,
+    [pbr::OriginalName("UpdateRoomUserInfo")] UpdateRoomUserInfo = 6,
     /// <summary>
     ///加入房間
     /// </summary>
@@ -901,8 +902,10 @@ namespace SocketGameProtobuf {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public PlayerPack(PlayerPack other) : this() {
       playerName_ = other.playerName_;
+      maxHp_ = other.maxHp_;
       hP_ = other.hP_;
       totalKill_ = other.totalKill_;
+      selectCharacter_ = other.selectCharacter_;
       posPack_ = other.posPack_ != null ? other.posPack_.Clone() : null;
       aniPack_ = other.aniPack_ != null ? other.aniPack_.Clone() : null;
       attackPack_ = other.attackPack_ != null ? other.attackPack_.Clone() : null;
@@ -929,8 +932,22 @@ namespace SocketGameProtobuf {
       }
     }
 
+    /// <summary>Field number for the "MaxHp" field.</summary>
+    public const int MaxHpFieldNumber = 2;
+    private int maxHp_;
+    /// <summary>
+    ///最大血量
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MaxHp {
+      get { return maxHp_; }
+      set {
+        maxHp_ = value;
+      }
+    }
+
     /// <summary>Field number for the "HP" field.</summary>
-    public const int HPFieldNumber = 2;
+    public const int HPFieldNumber = 3;
     private int hP_;
     /// <summary>
     ///血量
@@ -944,7 +961,7 @@ namespace SocketGameProtobuf {
     }
 
     /// <summary>Field number for the "totalKill" field.</summary>
-    public const int TotalKillFieldNumber = 3;
+    public const int TotalKillFieldNumber = 4;
     private int totalKill_;
     /// <summary>
     ///擊殺數
@@ -957,8 +974,22 @@ namespace SocketGameProtobuf {
       }
     }
 
+    /// <summary>Field number for the "selectCharacter" field.</summary>
+    public const int SelectCharacterFieldNumber = 5;
+    private int selectCharacter_;
+    /// <summary>
+    ///選擇角色編號
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SelectCharacter {
+      get { return selectCharacter_; }
+      set {
+        selectCharacter_ = value;
+      }
+    }
+
     /// <summary>Field number for the "posPack" field.</summary>
-    public const int PosPackFieldNumber = 4;
+    public const int PosPackFieldNumber = 6;
     private global::SocketGameProtobuf.PosPack posPack_;
     /// <summary>
     ///角色位置包
@@ -972,7 +1003,7 @@ namespace SocketGameProtobuf {
     }
 
     /// <summary>Field number for the "aniPack" field.</summary>
-    public const int AniPackFieldNumber = 5;
+    public const int AniPackFieldNumber = 7;
     private global::SocketGameProtobuf.AniPack aniPack_;
     /// <summary>
     ///角色動畫包
@@ -986,7 +1017,7 @@ namespace SocketGameProtobuf {
     }
 
     /// <summary>Field number for the "attackPack" field.</summary>
-    public const int AttackPackFieldNumber = 6;
+    public const int AttackPackFieldNumber = 8;
     private global::SocketGameProtobuf.AttackPack attackPack_;
     /// <summary>
     ///玩家攻擊包
@@ -1000,7 +1031,7 @@ namespace SocketGameProtobuf {
     }
 
     /// <summary>Field number for the "killInfoPack" field.</summary>
-    public const int KillInfoPackFieldNumber = 7;
+    public const int KillInfoPackFieldNumber = 9;
     private global::SocketGameProtobuf.KillInfoPack killInfoPack_;
     /// <summary>
     ///擊殺訊息包
@@ -1027,8 +1058,10 @@ namespace SocketGameProtobuf {
         return true;
       }
       if (PlayerName != other.PlayerName) return false;
+      if (MaxHp != other.MaxHp) return false;
       if (HP != other.HP) return false;
       if (TotalKill != other.TotalKill) return false;
+      if (SelectCharacter != other.SelectCharacter) return false;
       if (!object.Equals(PosPack, other.PosPack)) return false;
       if (!object.Equals(AniPack, other.AniPack)) return false;
       if (!object.Equals(AttackPack, other.AttackPack)) return false;
@@ -1040,8 +1073,10 @@ namespace SocketGameProtobuf {
     public override int GetHashCode() {
       int hash = 1;
       if (PlayerName.Length != 0) hash ^= PlayerName.GetHashCode();
+      if (MaxHp != 0) hash ^= MaxHp.GetHashCode();
       if (HP != 0) hash ^= HP.GetHashCode();
       if (TotalKill != 0) hash ^= TotalKill.GetHashCode();
+      if (SelectCharacter != 0) hash ^= SelectCharacter.GetHashCode();
       if (posPack_ != null) hash ^= PosPack.GetHashCode();
       if (aniPack_ != null) hash ^= AniPack.GetHashCode();
       if (attackPack_ != null) hash ^= AttackPack.GetHashCode();
@@ -1063,28 +1098,36 @@ namespace SocketGameProtobuf {
         output.WriteRawTag(10);
         output.WriteString(PlayerName);
       }
-      if (HP != 0) {
+      if (MaxHp != 0) {
         output.WriteRawTag(16);
+        output.WriteInt32(MaxHp);
+      }
+      if (HP != 0) {
+        output.WriteRawTag(24);
         output.WriteInt32(HP);
       }
       if (TotalKill != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteInt32(TotalKill);
       }
+      if (SelectCharacter != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(SelectCharacter);
+      }
       if (posPack_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(50);
         output.WriteMessage(PosPack);
       }
       if (aniPack_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(58);
         output.WriteMessage(AniPack);
       }
       if (attackPack_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(66);
         output.WriteMessage(AttackPack);
       }
       if (killInfoPack_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(74);
         output.WriteMessage(KillInfoPack);
       }
       if (_unknownFields != null) {
@@ -1098,11 +1141,17 @@ namespace SocketGameProtobuf {
       if (PlayerName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerName);
       }
+      if (MaxHp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MaxHp);
+      }
       if (HP != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(HP);
       }
       if (TotalKill != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(TotalKill);
+      }
+      if (SelectCharacter != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SelectCharacter);
       }
       if (posPack_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PosPack);
@@ -1130,11 +1179,17 @@ namespace SocketGameProtobuf {
       if (other.PlayerName.Length != 0) {
         PlayerName = other.PlayerName;
       }
+      if (other.MaxHp != 0) {
+        MaxHp = other.MaxHp;
+      }
       if (other.HP != 0) {
         HP = other.HP;
       }
       if (other.TotalKill != 0) {
         TotalKill = other.TotalKill;
+      }
+      if (other.SelectCharacter != 0) {
+        SelectCharacter = other.SelectCharacter;
       }
       if (other.posPack_ != null) {
         if (posPack_ == null) {
@@ -1176,35 +1231,43 @@ namespace SocketGameProtobuf {
             break;
           }
           case 16: {
-            HP = input.ReadInt32();
+            MaxHp = input.ReadInt32();
             break;
           }
           case 24: {
+            HP = input.ReadInt32();
+            break;
+          }
+          case 32: {
             TotalKill = input.ReadInt32();
             break;
           }
-          case 34: {
+          case 40: {
+            SelectCharacter = input.ReadInt32();
+            break;
+          }
+          case 50: {
             if (posPack_ == null) {
               PosPack = new global::SocketGameProtobuf.PosPack();
             }
             input.ReadMessage(PosPack);
             break;
           }
-          case 42: {
+          case 58: {
             if (aniPack_ == null) {
               AniPack = new global::SocketGameProtobuf.AniPack();
             }
             input.ReadMessage(AniPack);
             break;
           }
-          case 50: {
+          case 66: {
             if (attackPack_ == null) {
               AttackPack = new global::SocketGameProtobuf.AttackPack();
             }
             input.ReadMessage(AttackPack);
             break;
           }
-          case 58: {
+          case 74: {
             if (killInfoPack_ == null) {
               KillInfoPack = new global::SocketGameProtobuf.KillInfoPack();
             }

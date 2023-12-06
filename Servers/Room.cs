@@ -41,7 +41,7 @@ namespace SocketGameServer.Servers
         /// 獲取房間玩家訊息
         /// </summary>
         /// <returns></returns>
-        public RepeatedField<PlayerPack> GetPlayerInfo()
+        public RepeatedField<PlayerPack> GetRoomPlayerInfo()
         {
             RepeatedField<PlayerPack> pack = new RepeatedField<PlayerPack>();
             foreach (Client c in clientList)
@@ -50,6 +50,7 @@ namespace SocketGameServer.Servers
                 player.PlayerName = c.GetUserInfo.UserName;
                 player.TotalKill = c.GetUserInfo.TotalKill;
                 player.HP = c.GetUserInfo.HP;
+                player.SelectCharacter = c.GetUserInfo.characterIndex;
                 pack.Add(player);
             }
 
@@ -106,10 +107,10 @@ namespace SocketGameServer.Servers
             client.GetRoom = this;
 
             MainPack pack = new MainPack();
-            pack.ActionCode = ActionCode.PlayerList;
+            pack.ActionCode = ActionCode.UpdateRoomUserInfo;
 
             //賦值
-            foreach (PlayerPack player in GetPlayerInfo())
+            foreach (PlayerPack player in GetRoomPlayerInfo())
             {
                 pack.PlayerPack.Add(player);
             }
@@ -137,15 +138,37 @@ namespace SocketGameServer.Servers
             clientList.Remove(client);
             roomInfo.State = 0;
             client.GetRoom = null;                        
-            pack.ActionCode = ActionCode.PlayerList;
+            pack.ActionCode = ActionCode.UpdateRoomUserInfo;
 
             //賦值
-            foreach (PlayerPack player in GetPlayerInfo())
+            foreach (PlayerPack player in GetRoomPlayerInfo())
             {
                 pack.PlayerPack.Add(player);
             }
 
             Broadcast(client, pack);
+        }
+
+        /// <summary>
+        /// 更新房間玩家列表
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="pack"></param>
+        public void UpdateRoomUserInfo(Client client, MainPack pack)
+        {
+            client.GetUserInfo.characterIndex = pack.PlayerPack[0].SelectCharacter;
+
+            MainPack mainPack = new MainPack();
+            mainPack.ActionCode = ActionCode.UpdateRoomUserInfo;
+            mainPack.Str = "UpdateRoomUserInfo";
+
+            //賦值
+            foreach (PlayerPack player in GetRoomPlayerInfo())
+            {
+                mainPack.PlayerPack.Add(player);
+            }
+
+            Broadcast(client, mainPack);
         }
 
         /// <summary>
@@ -185,10 +208,13 @@ namespace SocketGameServer.Servers
             foreach (var c in clientList)
             {
                 PlayerPack player = new PlayerPack();
-                c.GetUserInfo.HP = 100;
+                c.GetUserInfo.MaxHp = 100;
+                c.GetUserInfo.HP = c.GetUserInfo.MaxHp;
                 player.PlayerName = c.GetUserInfo.UserName;
+                player.MaxHp = c.GetUserInfo.MaxHp;
                 player.HP = c.GetUserInfo.HP;
                 player.TotalKill = c.GetUserInfo.TotalKill;
+                player.SelectCharacter = c.GetUserInfo.characterIndex;
                 pack.PlayerPack.Add(player);
             }
 
@@ -215,6 +241,7 @@ namespace SocketGameServer.Servers
                 {
                     PlayerPack playerPack = new PlayerPack();
                     playerPack.PlayerName = player.GetUserInfo.UserName;
+                    playerPack.MaxHp = player.GetUserInfo.MaxHp;
                     playerPack.HP = player.GetUserInfo.HP;
                     pack.PlayerPack.Add(playerPack);
                 }
@@ -238,7 +265,7 @@ namespace SocketGameServer.Servers
             mainPack.Str = "PlayerAttack";
 
             AttackPack attackPack = pack.PlayerPack[0].AttackPack;
-            List<PlayerPack> playerPacks = GetPlayerInfo().ToList();
+            List<PlayerPack> playerPacks = GetRoomPlayerInfo().ToList();
             foreach (var player in attackPack.AttackNames)
             {
                 for (int i = 0; i < playerPacks.Count; i++)
@@ -281,6 +308,7 @@ namespace SocketGameServer.Servers
             {
                 PlayerPack playerPack = new PlayerPack();
                 playerPack.PlayerName = player.GetUserInfo.UserName;
+                playerPack.MaxHp = player.GetUserInfo.MaxHp;
                 playerPack.HP = player.GetUserInfo.HP;
                 playerPack.TotalKill = player.GetUserInfo.TotalKill;
                 pack.PlayerPack.Add(playerPack);

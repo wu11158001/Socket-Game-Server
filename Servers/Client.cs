@@ -31,8 +31,10 @@ namespace SocketGameServer.Servers
         public class UserInfo
         {
             public string UserName { get; set; }
+            public int MaxHp { get; set; }
             public int HP { get; set; }
             public int TotalKill { get; set; }
+            public int characterIndex { get; set; }
             public PosPack Pos { get; set; }
         }
         public UserInfo GetUserInfo { get; set; }

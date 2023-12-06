@@ -74,7 +74,19 @@ namespace SocketGameServer.Controller
         {
             pack.Str = client.GetUserInfo.UserName + ":" + pack.Str;
             server.Chat(client, pack);
+            return null;
+        }
 
+        /// <summary>
+        /// 更換角色
+        /// </summary>
+        /// <param name="server"></param>
+        /// <param name="client"></param>
+        /// <param name="pack"></param>
+        /// <returns></returns>
+        public MainPack UpdateRoomUserInfo(Server server, Client client, MainPack pack)
+        {
+            client.GetRoom.UpdateRoomUserInfo(client, pack);
             return null;
         }
 

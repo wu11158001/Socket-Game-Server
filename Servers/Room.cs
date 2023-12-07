@@ -192,13 +192,10 @@ namespace SocketGameServer.Servers
         {
             MainPack pack = new MainPack();
             pack.ActionCode = ActionCode.Chat;
-            pack.Str = "遊戲準備開始...";
-            Broadcast(null, pack);
-            Thread.Sleep(1000);
 
-            for (int i = 2; i > 0; i--)
+            for (int i = 3; i > 0; i--)
             {
-                pack.Str = i.ToString();
+                pack.Str = $"遊戲開始倒數[{i}]";
                 Broadcast(null, pack);
                 Thread.Sleep(1000);
             }

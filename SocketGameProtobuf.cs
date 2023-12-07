@@ -54,9 +54,10 @@ namespace SocketGameProtobuf {
             "RXhpdBAIEggKBENoYXQQCRINCglTdGFydEdhbWUQChITCg9TZXJ2ZXJTdGFy",
             "dEdhbWUQCxIMCghFeGl0R2FtZRAMEhcKE1VwZGF0ZUNoYXJhY3Rlckxpc3QQ",
             "DRINCglVcGRhdGVQb3MQDhINCglVcGRhdGVBbmkQDxIQCgxQbGF5ZXJBdHRh",
-            "Y2sQEBIOCgpHYW1lUmVzdWx0EBESDAoIS2lsbEluZm8QEipPCgpSZXR1cm5D",
-            "b2RlEg4KClJldHVybk5vbmUQABILCgdTdWNjZWVkEAESCAoERmFpbBACEg0K",
-            "CUR1cGxpY2F0ZRADEgsKB05vdFJvb20QBGIGcHJvdG8z"));
+            "Y2sQEBIOCgpHYW1lUmVzdWx0EBESDAoIS2lsbEluZm8QEipnCgpSZXR1cm5D",
+            "b2RlEg4KClJldHVybk5vbmUQABILCgdTdWNjZWVkEAESCAoERmFpbBACEhIK",
+            "DkR1cGxpY2F0ZUxvZ2luEAMSCwoHTm90Um9vbRAEEhEKDUR1cGxpY2F0ZVJv",
+            "b20QBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SocketGameProtobuf.RequestCode), typeof(global::SocketGameProtobuf.ActionCode), typeof(global::SocketGameProtobuf.ReturnCode), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -182,11 +183,15 @@ namespace SocketGameProtobuf {
     /// <summary>
     ///重複登入
     /// </summary>
-    [pbr::OriginalName("Duplicate")] Duplicate = 3,
+    [pbr::OriginalName("DuplicateLogin")] DuplicateLogin = 3,
     /// <summary>
     ///房間不存在
     /// </summary>
     [pbr::OriginalName("NotRoom")] NotRoom = 4,
+    /// <summary>
+    ///房間名重複
+    /// </summary>
+    [pbr::OriginalName("DuplicateRoom")] DuplicateRoom = 5,
   }
 
   #endregion

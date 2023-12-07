@@ -41,7 +41,7 @@ namespace SocketGameServer.Controller
         {
             if(server.GetClientList.Any(list => list.GetUserInfo.UserName == pack.LoginPack.UserName))
             {
-                pack.ReturnCode = ReturnCode.Duplicate;
+                pack.ReturnCode = ReturnCode.DuplicateLogin;
                 Console.WriteLine(pack.LoginPack.UserName + " => 重複登入");
                 return pack;
             }

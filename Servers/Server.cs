@@ -83,6 +83,16 @@ namespace SocketGameServer.Servers
         {
             try
             {
+                for (int i = 0; i < roomList.Count; i++)
+                {
+                    if (roomList[i].GetRoomInfo.RoomName.Equals(pack.RoomPack[0].RoomName))
+                    {
+                        pack.ReturnCode = ReturnCode.DuplicateRoom;
+                        return pack;
+                    }
+                }
+                
+
                 Room room = new Room(this, client, pack.RoomPack[0]);
                 roomList.Add(room);
 

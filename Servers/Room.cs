@@ -202,7 +202,7 @@ namespace SocketGameServer.Servers
 
             getResultClientList.Clear();
             pack.ActionCode = ActionCode.ServerStartGame;
-
+            pack.Str = "UpdateCharacterList";
             foreach (var c in clientList)
             {
                 PlayerPack player = new PlayerPack();
@@ -235,6 +235,8 @@ namespace SocketGameServer.Servers
                 //其他玩家退出
                 clientList.Remove(client);
                 pack.ActionCode = ActionCode.UpdateCharacterList;
+                pack.Str = client.GetUserInfo.UserName;
+
                 foreach (var player in clientList)
                 {
                     PlayerPack playerPack = new PlayerPack();
@@ -243,8 +245,7 @@ namespace SocketGameServer.Servers
                     playerPack.HP = player.GetUserInfo.HP;
                     pack.PlayerPack.Add(playerPack);
                 }
-
-                pack.Str = client.GetUserInfo.UserName;
+                
                 Broadcast(client, pack);
             }
         }
@@ -315,7 +316,7 @@ namespace SocketGameServer.Servers
                 if (player.GetUserInfo.HP <= 0) dieClientList.Add(player);
             }
 
-            pack.Str = "UpdateCharacterList";
+            pack.Str = "UpdateCharacterListValue";
             Broadcast(null, pack);
 
             JudgeGameResult(dieClientList, client);

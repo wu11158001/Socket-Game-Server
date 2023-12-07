@@ -100,7 +100,7 @@ namespace SocketGameServer.Servers
         {
             if(pack.ActionCode != ActionCode.UpdatePos)
             {
-                Console.WriteLine($"發送消息:" + pack.ActionCode.ToString());
+                Console.WriteLine($"{this.GetUserInfo.UserName} 發送消息: " + pack.ActionCode.ToString());
             }
 
             socket.Send(Message.PackData(pack));

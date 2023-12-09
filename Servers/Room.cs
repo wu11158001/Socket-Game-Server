@@ -264,26 +264,22 @@ namespace SocketGameServer.Servers
             mainPack.Str = "PlayerAttack";
 
             AttackPack attackPack = pack.PlayerPack[0].AttackPack;
-            List<PlayerPack> playerPacks = GetRoomPlayerInfo().ToList();
+            List<PlayerPack> playerPacksList = GetRoomPlayerInfo().ToList();
             foreach (var player in attackPack.AttackNames)
             {
-                for (int i = 0; i < playerPacks.Count; i++)
+                if(playerPacksList.Where(x => x.PlayerName == player).Count() > 0);
                 {
-                    if (player == playerPacks[i].PlayerName && player != client.GetUserInfo.UserName)
+                    PlayerPack target = playerPacksList.Where(x => x.PlayerName == player).First();
+                    PlayerPack playerPack = new PlayerPack();
+                    playerPack.PlayerName = target.PlayerName;
+                    if (target.HP - attackPower >= 0)
                     {
-                        PlayerPack playerPack = new PlayerPack();
-                        playerPack.PlayerName = playerPacks[i].PlayerName;
-
-                        if (playerPacks[i].HP - attackPower >= 0)
-                        {
-                            int hp = playerPacks[i].HP - attackPower;
-                            SetPlayerInfo(player, hp);
-                            playerPack.HP = hp;
-                        }
-
-                        mainPack.PlayerPack.Add(playerPack);
-                        break;
+                        int hp = target.HP - attackPower;
+                        SetPlayerInfo(player, hp);
+                        target.HP = hp;
                     }
+
+                    mainPack.PlayerPack.Add(playerPack);
                 }
             }
 
